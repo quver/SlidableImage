@@ -8,22 +8,23 @@
 
 import UIKit
 
-class SlidableImage: UIView {
+/// Super easy Slider for before&after images
+public class SlidableImage: UIView {
 
     /**
      First image container view. You can override it with your custom view.
      */
-    var firstView: UIView
+    public var firstView: UIView
 
     /**
      Second image container view. You can override it with your custom view.
      */
-    var secondView: UIView
+    public var secondView: UIView
 
     /**
      Circle view with icon for sliding images. You can override it with your custom view.
     */
-    var sliderCircle: UIView
+    public var sliderCircle: UIView
 
     /**
      Generic initializer with views
@@ -34,7 +35,7 @@ class SlidableImage: UIView {
 
      - returns: instance
      */
-    init(frame: CGRect, firstView: UIView, secondView: UIView) {
+    public init(frame: CGRect, firstView: UIView, secondView: UIView) {
         self.firstView = firstView
         self.secondView = secondView
         sliderCircle = SlidableImage.prepareSliderCircle()
@@ -48,12 +49,12 @@ class SlidableImage: UIView {
      Short way to initialize SlidableView. You need target size and images.
 
      - parameter frame:       Frame size
-     - parameter firstImage:  Sirst image for sliding
+     - parameter firstImage:  First image for sliding
      - parameter secondImage: Second image for sliding
 
      - returns: instance
      */
-    convenience init(frame: CGRect, firstImage: UIImage, secondImage: UIImage) {
+    convenience public init(frame: CGRect, firstImage: UIImage, secondImage: UIImage) {
         let firstView = UIImageView(frame: frame)
         firstView.image = UIImage(named: "draw")
         firstView.contentMode = .ScaleAspectFill
@@ -65,7 +66,7 @@ class SlidableImage: UIView {
         self.init(frame: frame, firstView: firstView, secondView: secondView)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -74,7 +75,7 @@ class SlidableImage: UIView {
 
      - parameter maskLocation: x-axis location in frame, where image should be slided
      */
-    func updateMask(maskLocation: CGFloat) {
+    public func updateMask(maskLocation: CGFloat) {
         let maskRectPath = UIBezierPath(rect: CGRect(x: self.bounds.minX, y: bounds.minY, width: maskLocation, height: bounds.height))
         let mask = CAShapeLayer()
         mask.path = maskRectPath.CGPath
@@ -83,6 +84,9 @@ class SlidableImage: UIView {
         sliderCircle.center.x = maskLocation
     }
 
+  /**
+   Private wrapper for setup view
+   */
     private func initializeView() {
         clipsToBounds = true
         sliderCircle.center = center
@@ -93,6 +97,9 @@ class SlidableImage: UIView {
         addSubview(sliderCircle)
     }
 
+  /**
+   Private wrapper for adding gesture recognizer
+   */
     private func initializeGestureRecognizer() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(gestureHandler))
         sliderCircle.addGestureRecognizer(panGestureRecognizer)
@@ -109,6 +116,9 @@ class SlidableImage: UIView {
 
     }
 
+  /**
+   Private wrapper for setup circle slider view
+   */
     private class func prepareSliderCircle() -> UIView {
         // Workaround - without this view, gesture recognizer doesn't work
         let circle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
