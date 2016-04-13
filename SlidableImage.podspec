@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "SlidableImage"
-  s.version               = "1.0.0"
+  s.version               = "1.0.1"
   s.license               = "MIT"
   s.summary               = "Fancy slider for before&after images"
   s.homepage              = "https://github.com/quver/SlidableImage"
