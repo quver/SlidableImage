@@ -13,7 +13,8 @@ platform :ios do
 		slather(
 			proj: "SlidableImage.xcodeproj",
 			travis: true,
-			coveralls: true
+			coveralls: true,
+			scheme: "SlidableImage"
 		)
 	end
 

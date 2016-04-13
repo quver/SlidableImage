@@ -42,10 +42,3 @@ class SlidableImageTests: XCTestCase {
     }
     
 }
-
-func ==(lhs: UIImage, rhs: UIImage) -> Bool {
-    guard let data1 = UIImagePNGRepresentation(lhs),
-        let data2 = UIImagePNGRepresentation(rhs) else { return false }
-
-    return data1.isEqual(data2)
-}
