@@ -57,11 +57,11 @@ public class SlidableImage: UIView {
     convenience public init(frame: CGRect, firstImage: UIImage, secondImage: UIImage) {
         let firstView = UIImageView(frame: frame)
         firstView.image = UIImage(named: "draw")
-        firstView.contentMode = .ScaleAspectFill
+        firstView.contentMode = .scaleAspectFill
         
         let secondView = UIImageView(frame: frame)
         secondView.image = UIImage(named: "photo")
-        secondView.contentMode = .ScaleAspectFill
+        secondView.contentMode = .scaleAspectFill
 
         self.init(frame: frame, firstView: firstView, secondView: secondView)
     }
@@ -75,10 +75,10 @@ public class SlidableImage: UIView {
 
      - parameter maskLocation: x-axis location in frame, where image should be slided
      */
-    public func updateMask(maskLocation: CGFloat) {
+    public func updateMask(_ maskLocation: CGFloat) {
         let maskRectPath = UIBezierPath(rect: CGRect(x: self.bounds.minX, y: bounds.minY, width: maskLocation, height: bounds.height))
         let mask = CAShapeLayer()
-        mask.path = maskRectPath.CGPath
+        mask.path = maskRectPath.cgPath
         secondView.layer.mask = mask
 
         sliderCircle.center.x = maskLocation
@@ -105,8 +105,8 @@ public class SlidableImage: UIView {
         sliderCircle.addGestureRecognizer(panGestureRecognizer)
     }
 
-    @objc private func gestureHandler(panGestureRecognizer: UIPanGestureRecognizer) {
-        let location = panGestureRecognizer.locationInView(firstView)
+    @objc private func gestureHandler(_ panGestureRecognizer: UIPanGestureRecognizer) {
+        let location = panGestureRecognizer.location(in: firstView)
 
         if !(self.bounds.minX ... self.bounds.maxX ~= location.x) {
             return
