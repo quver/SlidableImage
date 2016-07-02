@@ -3,7 +3,7 @@
 //  SlidableImage
 //
 //  Created by Pawel Bednorz on 09.04.2016.
-//  Copyright © 2016 Quver.xyz. All rights reserved.
+//  Copyright © 2016 Quver. All rights reserved.
 //
 
 import UIKit
@@ -56,11 +56,11 @@ public class SlidableImage: UIView {
      */
     convenience public init(frame: CGRect, firstImage: UIImage, secondImage: UIImage) {
         let firstView = UIImageView(frame: frame)
-        firstView.image = UIImage(named: "draw")
+        firstView.image = firstImage
         firstView.contentMode = .scaleAspectFill
         
         let secondView = UIImageView(frame: frame)
-        secondView.image = UIImage(named: "photo")
+        secondView.image = secondImage
         secondView.contentMode = .scaleAspectFill
 
         self.init(frame: frame, firstView: firstView, secondView: secondView)

@@ -3,7 +3,7 @@
 //  SlidableImage
 //
 //  Created by Pawel Bednorz on 09.04.2016.
-//  Copyright © 2016 Quver.xyz. All rights reserved.
+//  Copyright © 2016 Quver. All rights reserved.
 //
 
 import UIKit
