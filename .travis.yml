@@ -2,6 +2,6 @@ language: objective-c
 osx_image: xcode8
 sudo: false
 before_install:
-  - gem install slather -N
-  - gem update fastlane -N
+  - open -b com.apple.iphonesimulator
+  - gem install slather --no-document
 script: fastlane testing
