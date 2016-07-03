@@ -1,10 +1,12 @@
-fastlane_version "1.80.0"
+fastlane_version "1.97.0"
 
 default_platform :ios
 
 platform :ios do
 
 	lane :testing do
+		update_fastlane
+		
 		scan(
 			project: "SlidableImage.xcodeproj",
 			scheme: "SlidableImage"

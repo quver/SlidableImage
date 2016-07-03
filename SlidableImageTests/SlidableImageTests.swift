@@ -29,10 +29,10 @@ class SlidableImageTests: XCTestCase {
     func testAdvancedInit() {
 
         let firstView = UIView(frame: rect)
-        firstView.backgroundColor = .greenColor()
+        firstView.backgroundColor = .green()
 
         let secondView = UIView(frame: rect)
-        secondView.backgroundColor = .redColor()
+        secondView.backgroundColor = .red()
 
         let slider = SlidableImage(frame: rect, firstView: firstView, secondView: secondView)
 
