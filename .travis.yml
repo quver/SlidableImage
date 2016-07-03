@@ -4,4 +4,5 @@ sudo: false
 before_install:
   - open -b com.apple.iphonesimulator
   - gem install slather --no-document
+  - gem install fastlane --no-document
 script: fastlane testing
