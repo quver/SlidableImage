@@ -42,7 +42,7 @@ view.addSubview(slider)
 
 ## Author
 
-Paweł Bednorz, Quver.xyz
+Paweł Bednorz, Quver
 
 ## License
 
