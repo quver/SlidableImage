@@ -10,17 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let rect = CGRect(x: 0, y: 0, width: 300, height: 500)
-        guard let firstImage = UIImage(named: "photo"),
-            let secondImage = UIImage(named: "draw") else { return }
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        let slider = SlidableImage(frame: rect, firstImage: firstImage, secondImage: secondImage)
+    let rect = CGRect(x: 0, y: 0, width: 300, height: 500)
+    guard let firstImage = UIImage(named: "photo"),
+      let secondImage = UIImage(named: "draw") else { return }
 
-        slider.center = view.center
-        view.addSubview(slider)
-    }
+    let slider = SlidableImage(frame: rect, firstImage: firstImage, secondImage: secondImage)
+
+    slider.center = view.center
+    view.addSubview(slider)
+  }
+
 }
 
