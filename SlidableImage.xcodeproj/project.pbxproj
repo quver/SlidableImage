@@ -13,7 +13,7 @@
 		D55BB1921CB97A10000B2875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55BB1911CB97A10000B2875 /* Assets.xcassets */; };
 		D55BB1951CB97A10000B2875 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55BB1931CB97A10000B2875 /* LaunchScreen.storyboard */; };
 		D55BB1A01CB97A10000B2875 /* SlidableImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB19F1CB97A10000B2875 /* SlidableImageTests.swift */; };
-		D55BB1AB1CB97A3A000B2875 /* SlidableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB1AA1CB97A3A000B2875 /* SlidableImage.swift */; };
+		D565D0A51DCD6B2D0028788A /* SlidableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565D0A41DCD6B2D0028788A /* SlidableImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		D55BB19B1CB97A10000B2875 /* SlidableImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidableImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55BB19F1CB97A10000B2875 /* SlidableImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidableImageTests.swift; sourceTree = "<group>"; };
 		D55BB1A11CB97A10000B2875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D55BB1AA1CB97A3A000B2875 /* SlidableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableImage.swift; sourceTree = "<group>"; };
+		D565D0A41DCD6B2D0028788A /* SlidableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlidableImage.swift; path = Sources/SlidableImage.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			children = (
 				D55BB18A1CB97A10000B2875 /* AppDelegate.swift */,
 				D55BB18C1CB97A10000B2875 /* ViewController.swift */,
-				D55BB1AA1CB97A3A000B2875 /* SlidableImage.swift */,
+				D565D0A41DCD6B2D0028788A /* SlidableImage.swift */,
 				D55BB18E1CB97A10000B2875 /* Main.storyboard */,
 				D55BB1911CB97A10000B2875 /* Assets.xcassets */,
 				D55BB1931CB97A10000B2875 /* LaunchScreen.storyboard */,
@@ -150,11 +150,11 @@
 					D55BB1861CB97A10000B2875 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = E4N952KM75;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					D55BB19A1CB97A10000B2875 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 						TestTargetID = D55BB1861CB97A10000B2875;
 					};
 				};
@@ -204,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D55BB18D1CB97A10000B2875 /* ViewController.swift in Sources */,
-				D55BB1AB1CB97A3A000B2875 /* SlidableImage.swift in Sources */,
+				D565D0A51DCD6B2D0028788A /* SlidableImage.swift in Sources */,
 				D55BB18B1CB97A10000B2875 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.quver.SlidableImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -364,7 +364,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -377,7 +377,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.quver.SlidableImageTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlidableImage.app/SlidableImage";
 			};
 			name = Debug;
@@ -391,7 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.quver.SlidableImageTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlidableImage.app/SlidableImage";
 			};
 			name = Release;

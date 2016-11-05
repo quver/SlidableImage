@@ -9,16 +9,16 @@
 import UIKit
 
 /// Super easy Slider for before&after images
-public class SlidableImage: UIView {
+open class SlidableImage: UIView {
 
   /// First image container view. You can override it with your custom view.
-  public var firstView: UIView
+  open var firstView: UIView
 
   /// Second image container view. You can override it with your custom view.
-  public var secondView: UIView
+  open var secondView: UIView
 
   /// Circle view with icon for sliding images. You can override it with your custom view.
-  public var sliderCircle: UIView
+  open var sliderCircle: UIView
 
   /// Generic initializer with views
   ///
@@ -56,7 +56,7 @@ public class SlidableImage: UIView {
   /// Typicaly this method is used by gesture recognizer, but you can use it for first state or animations
   ///
   /// - Parameter maskLocation: Position of slider
-  public func updateMask(location maskLocation: CGFloat) {
+  open func updateMask(location maskLocation: CGFloat) {
     let maskRectPath = UIBezierPath(rect: CGRect(x: bounds.minX,
                                                  y: bounds.minY,
                                                  width: maskLocation,
@@ -69,7 +69,7 @@ public class SlidableImage: UIView {
   }
 
   /// Private wrapper for setup view
-  private func initializeViews() {
+  fileprivate func initializeViews() {
     clipsToBounds = true
     sliderCircle.center = center
     updateMask(location: center.x)
