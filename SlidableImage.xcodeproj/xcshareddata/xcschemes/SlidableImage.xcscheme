@@ -39,16 +39,6 @@
                ReferencedContainer = "container:SlidableImage.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D50B73D81CBE92B100C5827C"
-               BuildableName = "SlidableImageUITests.xctest"
-               BlueprintName = "SlidableImageUITests"
-               ReferencedContainer = "container:SlidableImage.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

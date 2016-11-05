@@ -1,6 +1,6 @@
 # SlidableImage
 [![Build Status](https://travis-ci.org/quver/SlidableImage.svg)](https://travis-ci.org/quver/SlidableImage)
-[![Coverage Status](https://coveralls.io/repos/github/quver/SlidableImage/badge.svg?branch=master)](https://coveralls.io/github/quver/SlidableImage?branch=master)
+[![codecov](https://codecov.io/gh/quver/SlidableImage/branch/master/graph/badge.svg)](https://codecov.io/gh/quver/SlidableImage)
 [![codebeat badge](https://codebeat.co/badges/53a20383-39e8-42ee-9df3-56b3bb55cb1d)](https://codebeat.co/projects/github-com-quver-slidableimage)
 [![GitHub license](https://img.shields.io/github/license/quver/SlidableImage.svg)]()
 [![Platform](https://img.shields.io/cocoapods/p/SlidableImage.svg?style=flat)](http://cocoapods.org/pods/SlidableImage)
