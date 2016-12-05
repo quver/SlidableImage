@@ -104,15 +104,23 @@ open class SlidableImage: UIView {
     }
     mask.path = maskRectPath.cgPath
     secondView.layer.mask = mask
-    sliderCircle.center.x = maskLocation
+    if slideDirection == .left || slideDirection == .right {
+      sliderCircle.center.x = maskLocation
+    } else {
+      sliderCircle.center.y = maskLocation
+    }
   }
 
   /// Private wrapper for setup view
   fileprivate func initializeViews() {
     clipsToBounds = true
     sliderCircle.center = center
-    updateMask(location: center.x)
-
+    if slideDirection == .left || slideDirection == .right {
+      updateMask(location: center.x)
+    } else {
+      updateMask(location: center.y)
+    }
+    
     addSubview(firstView)
     addSubview(secondView)
     addSubview(sliderCircle)
@@ -127,11 +135,13 @@ open class SlidableImage: UIView {
   @objc private func gestureHandler(_ panGestureRecognizer: UIPanGestureRecognizer) {
     let location = panGestureRecognizer.location(in: firstView)
 
-    guard (bounds.minX...bounds.maxX ~= location.x) else {
-      return
+    if slideDirection == .left || slideDirection == .right {
+      guard (bounds.minX...bounds.maxX ~= location.x) else { return }
+      updateMask(location: location.x)
+    } else {
+      guard (bounds.minY...bounds.maxY ~= location.y) else { return }
+      updateMask(location: location.y)
     }
-
-    updateMask(location: location.x)
   }
 
   /// Private wrapper for setup circle slider view
