@@ -17,9 +17,9 @@ public enum SlideDirection: Int {
 
 public struct SlidableImageBorder {
   var borderWidth: CGFloat
-  var borderColor: CGColor
-    
-  public init(borderWidth width: CGFloat, borderColor color: CGColor) {
+  var borderColor: UIColor
+
+  public init(borderWidth width: CGFloat, borderColor color: UIColor) {
     self.borderWidth = width
     self.borderColor = color
   }
@@ -39,18 +39,23 @@ open class SlidableImage: UIView {
 
   /// Enum that describes which direction the slider will slide from.
   open var slideDirection: SlideDirection
-    
+
+  /// Struct that tells the slider if there should be a border view added
+  open var sliderBorder: SlidableImageBorder? = nil
+  private var sliderBorderView: UIView?
+
   /// Generic initializer with views
   ///
   /// - Parameters:
   ///   - frame: Frame size
   ///   - firstView: First view - should have size equal to frame and second view
   ///   - secondView: Second view - should have size equal to frame and second view
-  public init(frame: CGRect, firstView: UIView, secondView: UIView, sliderImage: UIImage? = nil, slideDirection: SlideDirection? = nil) {
+  public init(frame: CGRect, firstView: UIView, secondView: UIView, sliderImage: UIImage? = nil, slideDirection: SlideDirection? = nil, sliderBorder: SlidableImageBorder? = nil) {
     self.firstView = firstView
     self.secondView = secondView
     self.sliderCircle = SlidableImage.setupSliderCircle(sliderImage: sliderImage)
     self.slideDirection = slideDirection ?? .right
+    self.sliderBorder = sliderBorder
     super.init(frame: frame)
 
     initializeViews()
@@ -63,11 +68,11 @@ open class SlidableImage: UIView {
   ///   - frame: Frame size
   ///   - firstImage: First image for sliding
   ///   - secondImage: Second image for sliding
-  convenience public init(frame: CGRect, firstImage: UIImage, secondImage: UIImage, sliderImage: UIImage? = nil, slideDirection: SlideDirection? = nil) {
+  convenience public init(frame: CGRect, firstImage: UIImage, secondImage: UIImage, sliderImage: UIImage? = nil, slideDirection: SlideDirection? = nil, sliderBorder: SlidableImageBorder? = nil) {
     let firstView = SlidableImage.setup(image: firstImage, frame: frame)
     let secondView = SlidableImage.setup(image: secondImage, frame: frame)
     
-    self.init(frame: frame, firstView: firstView, secondView: secondView, sliderImage: sliderImage, slideDirection: slideDirection)
+    self.init(frame: frame, firstView: firstView, secondView: secondView, sliderImage: sliderImage, slideDirection: slideDirection, sliderBorder: sliderBorder)
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -124,6 +129,20 @@ open class SlidableImage: UIView {
     addSubview(firstView)
     addSubview(secondView)
     addSubview(sliderCircle)
+
+    if let sliderBorder = sliderBorder {
+      sliderBorderView = UIView()
+      sliderBorderView?.translatesAutoresizingMaskIntoConstraints = false
+      sliderBorderView?.backgroundColor = sliderBorder.borderColor
+      addSubview(sliderBorderView!)
+      addConstraints([
+        NSLayoutConstraint(item: sliderBorderView!, attribute: .centerX, relatedBy: .equal, toItem: sliderCircle, attribute: .centerX, multiplier: 1.0, constant: 0.0),
+        NSLayoutConstraint(item: sliderBorderView!, attribute: .centerY, relatedBy: .equal, toItem: sliderCircle, attribute: .centerY, multiplier: 1.0, constant: 0.0),
+        NSLayoutConstraint(item: sliderBorderView!, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: 0.0),
+        NSLayoutConstraint(item: sliderBorderView!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: sliderBorder.borderWidth)
+        ])
+      bringSubview(toFront: sliderCircle)
+    }
   }
 
   /// Private wrapper for adding gesture recognizer
