@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A enum used to determine which direction the slider should slide from
 public enum SlideDirection: Int {
   case left
   case right
@@ -15,6 +16,7 @@ public enum SlideDirection: Int {
   case bottom
 }
 
+/// A struct containing border information for the slider. You can use this struct to define the width and color of the slider border.
 public struct SlidableImageBorder {
   var borderWidth: CGFloat
   var borderColor: UIColor
@@ -50,6 +52,8 @@ open class SlidableImage: UIView {
   ///   - frame: Frame size
   ///   - firstView: First view - should have size equal to frame and second view
   ///   - secondView: Second view - should have size equal to frame and second view
+  ///   - slideDirection: Optional parameter for the direction that the slider should slide. The default value is .right.
+  ///   - sliderBorder: Optional paramter that will add a border to the slider of the specfied size and color
   public init(frame: CGRect, firstView: UIView, secondView: UIView, sliderImage: UIImage? = nil, slideDirection: SlideDirection? = nil, sliderBorder: SlidableImageBorder? = nil) {
     self.firstView = firstView
     self.secondView = secondView
@@ -68,6 +72,8 @@ open class SlidableImage: UIView {
   ///   - frame: Frame size
   ///   - firstImage: First image for sliding
   ///   - secondImage: Second image for sliding
+  ///   - slideDirection: Optional parameter for the direction that the slider should slide. The default value is .right.
+  ///   - sliderBorder: Optional paramter that will add a border to the slider of the specfied size and color
   convenience public init(frame: CGRect, firstImage: UIImage, secondImage: UIImage, sliderImage: UIImage? = nil, slideDirection: SlideDirection? = nil, sliderBorder: SlidableImageBorder? = nil) {
     let firstView = SlidableImage.setup(image: firstImage, frame: frame)
     let secondView = SlidableImage.setup(image: secondImage, frame: frame)
@@ -109,9 +115,10 @@ open class SlidableImage: UIView {
     }
     mask.path = maskRectPath.cgPath
     secondView.layer.mask = mask
-    if slideDirection == .left || slideDirection == .right {
+    switch slideDirection {
+    case .left, .right:
       sliderCircle.center.x = maskLocation
-    } else {
+    case .top, .bottom:
       sliderCircle.center.y = maskLocation
     }
   }
@@ -120,9 +127,10 @@ open class SlidableImage: UIView {
   fileprivate func initializeViews() {
     clipsToBounds = true
     sliderCircle.center = center
-    if slideDirection == .left || slideDirection == .right {
+    switch slideDirection {
+    case .left, .right:
       updateMask(location: center.x)
-    } else {
+    case .top, .bottom:
       updateMask(location: center.y)
     }
     
@@ -130,6 +138,7 @@ open class SlidableImage: UIView {
     addSubview(secondView)
     addSubview(sliderCircle)
 
+    // Only add the slider to the view if a non nil sliderBorder was set
     if let sliderBorder = sliderBorder {
       sliderBorderView = UIView()
       sliderBorderView?.translatesAutoresizingMaskIntoConstraints = false
@@ -154,10 +163,11 @@ open class SlidableImage: UIView {
   @objc private func gestureHandler(_ panGestureRecognizer: UIPanGestureRecognizer) {
     let location = panGestureRecognizer.location(in: firstView)
 
-    if slideDirection == .left || slideDirection == .right {
+    switch slideDirection {
+    case .left, .right:
       guard (bounds.minX...bounds.maxX ~= location.x) else { return }
       updateMask(location: location.x)
-    } else {
+    case .top, .bottom:
       guard (bounds.minY...bounds.maxY ~= location.y) else { return }
       updateMask(location: location.y)
     }
@@ -165,6 +175,8 @@ open class SlidableImage: UIView {
 
   /// Private wrapper for setup circle slider view
   ///
+  /// - Parameters:
+  ///   - image: Content image for slider circle
   /// - Returns: Slider circle
   private class func setupSliderCircle(sliderImage: UIImage? = nil) -> UIView {
     // Workaround - without this view, gesture recognizer doesn't work
