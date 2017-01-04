@@ -25,7 +25,7 @@ This library support
 - Swift Package Manager
 
 ```ruby
-pod 'SlidableImage', '~>1.0'
+pod 'SlidableImage', '~>2.0'
 ```
 
 ## Using
@@ -35,12 +35,12 @@ pod 'SlidableImage', '~>1.0'
 Common init with image
 
 ```swift
-init(frame: CGRect, firstImage: UIImage, secondImage: UIImage)
+init(frame: CGRect, views: Views)
 ```
 Gemeric init with views
 
 ```swift
-init(frame: CGRect, firstView: UIView, secondView: UIView)
+init(frame: CGRect, images Images)
 ```
 
 ### Move slider
@@ -50,21 +50,38 @@ updateMask(location maskLocation: CGFloat)
 
 ### Variables
 
-First image container view. You can override it with your custom view
+Views tuple
 
 ```swift
-var firstView: UIView
+var views: Views
 ```
 
-Second image container view. You can override it with your custom view.
-
-```swift
-var secondView: UIView
-```
 Circle view with icon for sliding images. You can override it with your custom view.
-  
+
+
 ```swift
-sliderCircle: UIView
+var sliderCircle: UIView
+```
+
+Enum that describes which direction the slider will slide from.
+
+```
+var slideDirection: SlideDirection
+
+// Possible values
+.left, .right, .top, .bottom
+```
+
+Struct that tells the slider if there should be a border view added
+
+```swift
+var sliderBorder: SlidableImageBorder?
+
+// Structure
+struct SlidableImageBorder {
+  var borderWidth: CGFloat
+  var borderColor: UIColor
+}
 ```
 
 #### Example

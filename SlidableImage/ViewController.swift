@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     guard let firstImage = UIImage(named: "photo"),
       let secondImage = UIImage(named: "draw") else { return }
 
-    let slider = SlidableImage(frame: rect, firstImage: firstImage, secondImage: secondImage)
+    let slider = SlidableImage(frame: rect, images: (firstImage, secondImage))
 
     slider.center = view.center
     view.addSubview(slider)
