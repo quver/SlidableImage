@@ -3,7 +3,7 @@
 //  SlidableImageTests
 //
 //  Created by Pawel Bednorz on 09.04.2016.
-//  Copyright © 2016 Quver.xyz. All rights reserved.
+//  Copyright © 2016 Quver. All rights reserved.
 //
 
 import XCTest
@@ -20,7 +20,7 @@ class SlidableImageTests: XCTestCase {
         return
     }
 
-    let slider = SlidableImage(frame: rect, firstImage: firstRawImage, secondImage: secondRawImage)
+    let slider = SlidableImage(frame: rect, images: (firstRawImage, secondRawImage))
 
     XCTAssertNotNil(slider)
     XCTAssertEqual(slider.frame, rect)
@@ -34,11 +34,11 @@ class SlidableImageTests: XCTestCase {
     let secondView = UIView(frame: rect)
     secondView.backgroundColor = .red
 
-    let slider = SlidableImage(frame: rect, firstView: firstView, secondView: secondView)
+    let slider = SlidableImage(frame: rect, views: (firstView, secondView))
 
     XCTAssertEqual(slider.frame, rect)
-    XCTAssertEqual(slider.firstView, firstView)
-    XCTAssertEqual(slider.secondView, secondView)
+    XCTAssertEqual(slider.views.first, firstView)
+    XCTAssertEqual(slider.views.second, secondView)
   }
 
 }
