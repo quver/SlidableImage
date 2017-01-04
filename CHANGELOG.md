@@ -1,5 +1,25 @@
 # Change Log
 
+## [2.0.0](https://github.com/quver/SlidableImage/tree/2.0.0) (2017-01-05)
+
+[Full Changelog](https://github.com/quver/SlidableImage/compare/1.1.0...2.0.0)
+
+**Breaking changes**
+
+_Almost whole API changed_
+
+- initialization
+- access to properties
+
+**Implemented enhancements:**
+
+- Adding the ability to pass in an image for the circle slider view. [\#4](https://github.com/quver/SlidableImage/pull/4) ([campierce88](https://github.com/campierce88))
+
+**Merged pull requests:**
+
+- \[QT-6\] Refactor [\#6](https://github.com/quver/SlidableImage/pull/6) ([quver](https://github.com/quver))
+- \[QT-1\] Change slider from image to code [\#5](https://github.com/quver/SlidableImage/pull/5) ([quver](https://github.com/quver))
+
 ## [1.1.0](https://github.com/quver/SlidableImage/tree/1.1.0) (2016-11-05)
 [Full Changelog](https://github.com/quver/SlidableImage/compare/1.0.2...1.1.0)
 
