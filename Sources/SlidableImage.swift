@@ -181,6 +181,11 @@ open class SlidableImage: UIView {
   private class func setupSliderCircle(sliderImage: UIImage? = nil) -> UIView {
     // Workaround - without this view, gesture recognizer doesn't work
     let circle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    
+    guard let sliderImage = sliderImage else {
+      return ArrowsView(frame: frame)
+    }
+    
     circle.layer.cornerRadius = circle.bounds.width / 2
     
     let imageView = UIImageView(image: sliderImage)

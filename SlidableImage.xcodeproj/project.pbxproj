@@ -14,6 +14,7 @@
 		D55BB1951CB97A10000B2875 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55BB1931CB97A10000B2875 /* LaunchScreen.storyboard */; };
 		D55BB1A01CB97A10000B2875 /* SlidableImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB19F1CB97A10000B2875 /* SlidableImageTests.swift */; };
 		D565D0A51DCD6B2D0028788A /* SlidableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565D0A41DCD6B2D0028788A /* SlidableImage.swift */; };
+		D5C164DA1E07260700606F9F /* ArrowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C164D91E07260700606F9F /* ArrowsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		D55BB19F1CB97A10000B2875 /* SlidableImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidableImageTests.swift; sourceTree = "<group>"; };
 		D55BB1A11CB97A10000B2875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D565D0A41DCD6B2D0028788A /* SlidableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlidableImage.swift; path = Sources/SlidableImage.swift; sourceTree = SOURCE_ROOT; };
+		D5C164D91E07260700606F9F /* ArrowsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrowsView.swift; path = Sources/ArrowsView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				D55BB18A1CB97A10000B2875 /* AppDelegate.swift */,
 				D55BB18C1CB97A10000B2875 /* ViewController.swift */,
 				D565D0A41DCD6B2D0028788A /* SlidableImage.swift */,
+				D5C164D91E07260700606F9F /* ArrowsView.swift */,
 				D55BB18E1CB97A10000B2875 /* Main.storyboard */,
 				D55BB1911CB97A10000B2875 /* Assets.xcassets */,
 				D55BB1931CB97A10000B2875 /* LaunchScreen.storyboard */,
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C164DA1E07260700606F9F /* ArrowsView.swift in Sources */,
 				D55BB18D1CB97A10000B2875 /* ViewController.swift in Sources */,
 				D565D0A51DCD6B2D0028788A /* SlidableImage.swift in Sources */,
 				D55BB18B1CB97A10000B2875 /* AppDelegate.swift in Sources */,
