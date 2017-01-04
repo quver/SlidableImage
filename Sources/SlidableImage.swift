@@ -11,7 +11,7 @@ import UIKit
 public typealias Images = (first: UIImage, second: UIImage)
 public typealias Views = (first: UIView, second: UIView)
 
-/// A enum used to determine which direction the slider should slide from
+/// Direction of sliding
 public enum SlideDirection {
   case left
   case right
@@ -19,7 +19,7 @@ public enum SlideDirection {
   case bottom
 }
 
-/// A struct containing border information for the slider. You can use this struct to define the width and color of the slider border.
+/// Border information for the slider. You can use this struct to define the width and color of the slider border.
 public struct SlidableImageBorder {
   var borderWidth: CGFloat
   var borderColor: UIColor
@@ -34,20 +34,19 @@ open class SlidableImage: UIView {
   /// Circle view with icon for sliding images.
   open var sliderCircle: UIView
 
-  /// Enum that describes which direction the slider will slide from.
+  /// Direction of sliding
   open var slideDirection: SlideDirection
 
-  /// Struct that tells the slider if there should be a border view added
+  /// Describes border with the specfied size and color
   open var sliderBorder: SlidableImageBorder? = nil
 
   /// Generic initializer with views
   ///
   /// - Parameters:
   ///   - frame: Frame size
-  ///   - firstView: First view - should have size equal to frame and second view
-  ///   - secondView: Second view - should have size equal to frame and second view
-  ///   - slideDirection: Optional parameter for the direction that the slider should slide. The default value is .right.
-  ///   - sliderBorder: Optional paramter that will add a border to the slider of the specfied size and color
+  ///   - views: Views tuple - first view should have size equal to frame and second view
+  ///   - slideDirection: Optional - direction that the slider should slide. Default value .right.
+  ///   - sliderBorder: Optional - describes border with the specfied size and color
   public init(frame: CGRect,
               views: Views,
               sliderImage: UIImage? = nil,
@@ -68,10 +67,9 @@ open class SlidableImage: UIView {
   ///
   /// - Parameters:
   ///   - frame: Frame size
-  ///   - firstImage: First image for sliding
-  ///   - secondImage: Second image for sliding
-  ///   - slideDirection: Optional parameter for the direction that the slider should slide. The default value is .right.
-  ///   - sliderBorder: Optional paramter that will add a border to the slider of the specfied size and color
+  ///   - images: Images tuple
+  ///   - slideDirection: Optional - direction that the slider should slide. Default value .right.
+  ///   - sliderBorder: Optional - describes border with the specfied size and color
   convenience public init(frame: CGRect,
                           images: Images,
                           sliderImage: UIImage? = nil,
