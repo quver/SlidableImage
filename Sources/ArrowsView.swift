@@ -24,6 +24,7 @@ class ArrowsView: UIView {
 
   override func draw(_ rect: CGRect) {
     drawCircle(rect)
+    drawRightArrows(rect)
     drawLeftArrow(rect)
   }
 
@@ -40,13 +41,14 @@ class ArrowsView: UIView {
   }
 
   private func drawRightArrows(_ rect: CGRect) {
-    let factor: CGFloat = rect.width * factorValue
+    let factor = rect.width * factorValue
+    let doubleFactor = factor * 2
 
-    let startPointRight = CGPoint(x: (rect.maxX - 2 * factor), y: rect.midY)
+    let startPointRight = CGPoint(x: (rect.maxX - doubleFactor), y: rect.midY)
     let arrowRight = UIBezierPath()
     arrowRight.move(to: startPointRight)
-    arrowRight.addLine(to: CGPoint(x: (rect.midX + factor), y: (rect.minY + 2 * factor)))
-    arrowRight.addLine(to: CGPoint(x: (rect.midX + factor), y: (rect.maxY - 2 * factor)))
+    arrowRight.addLine(to: CGPoint(x: (rect.midX + factor), y: (rect.minY + doubleFactor)))
+    arrowRight.addLine(to: CGPoint(x: (rect.midX + factor), y: (rect.maxY - doubleFactor)))
     arrowRight.addLine(to: startPointRight)
 
     let arrowRightLayer = CAShapeLayer()
@@ -57,12 +59,13 @@ class ArrowsView: UIView {
 
   private func drawLeftArrow(_ rect: CGRect) {
     let factor: CGFloat = rect.width * factorValue
+    let doubleFactor = factor * 2
 
-    let startPointLeft = CGPoint(x: (rect.minX + 2 * factor), y: rect.midY)
+    let startPointLeft = CGPoint(x: (rect.minX + doubleFactor), y: rect.midY)
     let arrowLeft = UIBezierPath()
     arrowLeft.move(to: startPointLeft)
-    arrowLeft.addLine(to: CGPoint(x: (rect.midX - factor), y: (rect.minY + 2 * factor)))
-    arrowLeft.addLine(to: CGPoint(x: (rect.midX - factor), y: (rect.maxY - 2 * factor)))
+    arrowLeft.addLine(to: CGPoint(x: (rect.midX - factor), y: (rect.minY + doubleFactor)))
+    arrowLeft.addLine(to: CGPoint(x: (rect.midX - factor), y: (rect.maxY - doubleFactor)))
     arrowLeft.addLine(to: startPointLeft)
 
     let arrowLeftLayer = CAShapeLayer()
@@ -70,5 +73,5 @@ class ArrowsView: UIView {
     arrowLeftLayer.fillColor = UIColor.white.cgColor
     layer.addSublayer(arrowLeftLayer)
   }
-  
+
 }

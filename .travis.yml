@@ -1,5 +1,10 @@
 language: objective-c
 osx_image: xcode8.2
 sudo: false
+cache: cocoapods
+before_install:
+- gem install cocoapods
+- pod repo update --silent
+- pod install
 script: xcodebuild -scheme SlidableImage -project SlidableImage.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.0' build test
 after_success: bash <(curl -s https://codecov.io/bash) -J 'SlidableImage'
