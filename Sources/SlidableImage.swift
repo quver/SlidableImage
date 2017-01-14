@@ -8,25 +8,21 @@
 
 import UIKit
 
-public typealias Images = (first: UIImage, second: UIImage)
-public typealias Views = (first: UIView, second: UIView)
-
-/// Direction of sliding
-public enum SlideDirection {
-  case left
-  case right
-  case top
-  case bottom
-}
-
-/// Border information for the slider. You can use this struct to define the width and color of the slider border.
-public struct SlidableImageBorder {
-  var borderWidth: CGFloat
-  var borderColor: UIColor
-}
-
 /// Super easy Slider for before&after images
 open class SlidableImage: UIView {
+
+  public typealias Images = (first: UIImage, second: UIImage)
+  public typealias Views = (first: UIView, second: UIView)
+
+  /// Direction of sliding
+  public enum SlideDirection {
+
+    case left
+    case right
+    case top
+    case bottom
+
+  }
 
   /// Views tuple
   open var views: Views
@@ -38,7 +34,7 @@ open class SlidableImage: UIView {
   open var slideDirection: SlideDirection
 
   /// Describes border with the specfied size and color
-  open var sliderBorder: SlidableImageBorder? = nil
+  private var sliderBorderView: UIView?
 
   /// Generic initializer with views
   ///
@@ -50,17 +46,14 @@ open class SlidableImage: UIView {
   public init(frame: CGRect,
               views: Views,
               sliderImage: UIImage? = nil,
-              slideDirection: SlideDirection = .right,
-              sliderBorder: SlidableImageBorder? = nil) {
+              slideDirection: SlideDirection = .right) {
     self.views = views
     self.sliderCircle = SlidableImage.setupSliderCircle(sliderImage: sliderImage)
     self.slideDirection = slideDirection
-    self.sliderBorder = sliderBorder
     super.init(frame: frame)
 
     initializeViews()
     initializeGestureRecognizer()
-    initializeBorder()
   }
 
   /// Short way to initialize SlidableView. You need target size and images.
@@ -73,16 +66,14 @@ open class SlidableImage: UIView {
   convenience public init(frame: CGRect,
                           images: Images,
                           sliderImage: UIImage? = nil,
-                          slideDirection: SlideDirection = .right,
-                          sliderBorder: SlidableImageBorder? = nil) {
+                          slideDirection: SlideDirection = .right) {
     let firstView = SlidableImage.setup(image: images.first, frame: frame)
     let secondView = SlidableImage.setup(image: images.second, frame: frame)
 
     self.init(frame: frame,
               views: (firstView, secondView),
               sliderImage: sliderImage,
-              slideDirection: slideDirection,
-              sliderBorder: sliderBorder)
+              slideDirection: slideDirection)
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -130,6 +121,29 @@ open class SlidableImage: UIView {
     }
   }
 
+
+  /// Add border for slider
+  ///
+  /// - Parameters:
+  ///   - width: border width
+  ///   - color: border color
+  open func addBorder(width: CGFloat, color: UIColor) {
+    let borderView = UIView()
+    borderView.translatesAutoresizingMaskIntoConstraints = false
+    borderView.backgroundColor = color
+    addSubview(borderView)
+    setupBorderConstraints(of: borderView, width: width)
+    bringSubview(toFront: sliderCircle)
+
+    sliderBorderView = borderView
+  }
+
+
+  /// Remove border from slider
+  open func removeBorder() {
+    sliderBorderView?.removeFromSuperview()
+  }
+
   /// Private wrapper for setup view
   fileprivate func initializeViews() {
     clipsToBounds = true
@@ -152,61 +166,46 @@ open class SlidableImage: UIView {
     sliderCircle.addGestureRecognizer(panGestureRecognizer)
   }
 
+
+  /// Slide gesture handler
+  ///
+  /// - Parameter panGestureRecognizer: gesture recognizer
   @objc private func gestureHandler(_ panGestureRecognizer: UIPanGestureRecognizer) {
     let location = panGestureRecognizer.location(in: views.first)
 
     switch slideDirection {
     case .left, .right:
-      guard (bounds.minX...bounds.maxX ~= location.x) else { return }
+      guard bounds.minX...bounds.maxX ~= location.x else {
+        return
+      }
+
       updateMask(location: location.x)
     case .top, .bottom:
-      guard (bounds.minY...bounds.maxY ~= location.y) else { return }
+      guard bounds.minY...bounds.maxY ~= location.y else {
+        return
+      }
+
       updateMask(location: location.y)
     }
   }
 
-  /// Private wrapper for images border
-  private func initializeBorder() {
-    // Only add the slider to the view if a non nil sliderBorder was set
-    guard let sliderBorder = sliderBorder else {
-      return
-    }
 
-    let sliderBorderView = UIView()
-    sliderBorderView.translatesAutoresizingMaskIntoConstraints = false
-    sliderBorderView.backgroundColor = sliderBorder.borderColor
-    addSubview(sliderBorderView)
+  /// Setup constraints for border
+  ///
+  /// - Parameters:
+  ///   - view: border view
+  ///   - width: border color
+  private func setupBorderConstraints(of view: UIView, width: CGFloat) {
     addConstraints([
-      NSLayoutConstraint(item: sliderBorderView,
-                         attribute: .centerX,
-                         relatedBy: .equal,
-                         toItem: sliderCircle,
-                         attribute: .centerX,
-                         multiplier: 1.0,
-                         constant: 0.0),
-      NSLayoutConstraint(item: sliderBorderView,
-                         attribute: .centerY,
-                         relatedBy: .equal,
-                         toItem: sliderCircle,
-                         attribute: .centerY,
-                         multiplier: 1.0,
-                         constant: 0.0),
-      NSLayoutConstraint(item: sliderBorderView,
-                         attribute: .height,
-                         relatedBy: .equal,
-                         toItem: self,
-                         attribute: .height,
-                         multiplier: 1.0,
-                         constant: 0.0),
-      NSLayoutConstraint(item: sliderBorderView,
-                         attribute: .width,
-                         relatedBy: .equal,
-                         toItem: nil,
-                         attribute: .notAnAttribute,
-                         multiplier: 1.0,
-                         constant: sliderBorder.borderWidth)
+      NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: sliderCircle,
+                         attribute: .centerX, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: sliderCircle,
+                         attribute: .centerY, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: self,
+                         attribute: .height, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: nil,
+                         attribute: .notAnAttribute, multiplier: 1.0, constant: width)
       ])
-    bringSubview(toFront: sliderCircle)
   }
 
   /// Private wrapper for setup circle slider view

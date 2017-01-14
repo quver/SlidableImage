@@ -3,17 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AC3934AD3643246C4430EC /* Pods_SlidableImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6779F700CD766EAB96C2B7 /* Pods_SlidableImage.framework */; };
+		88EB8E5C05A4C79B80B5E119 /* Pods_SlidableImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E1F6F28287193B6C1744F5 /* Pods_SlidableImageTests.framework */; };
 		D55BB18B1CB97A10000B2875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB18A1CB97A10000B2875 /* AppDelegate.swift */; };
 		D55BB18D1CB97A10000B2875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB18C1CB97A10000B2875 /* ViewController.swift */; };
 		D55BB1901CB97A10000B2875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55BB18E1CB97A10000B2875 /* Main.storyboard */; };
 		D55BB1921CB97A10000B2875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55BB1911CB97A10000B2875 /* Assets.xcassets */; };
 		D55BB1951CB97A10000B2875 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55BB1931CB97A10000B2875 /* LaunchScreen.storyboard */; };
-		D55BB1A01CB97A10000B2875 /* SlidableImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB19F1CB97A10000B2875 /* SlidableImageTests.swift */; };
+		D55BB1A01CB97A10000B2875 /* SlidableImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB19F1CB97A10000B2875 /* SlidableImageSpec.swift */; };
 		D565D0A51DCD6B2D0028788A /* SlidableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565D0A41DCD6B2D0028788A /* SlidableImage.swift */; };
+		D5C0D7011E2AA33600E957F8 /* RecordableSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D7001E2AA33600E957F8 /* RecordableSnapshots.swift */; };
+		D5C0D7031E2AB93A00E957F8 /* ArrowsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D7021E2AB93A00E957F8 /* ArrowsViewSpec.swift */; };
 		D5C164DA1E07260700606F9F /* ArrowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C164D91E07260700606F9F /* ArrowsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08042B446B8A4C0C9AF8DE85 /* Pods-SlidableImageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidableImageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlidableImageTests/Pods-SlidableImageTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F6779F700CD766EAB96C2B7 /* Pods_SlidableImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidableImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39E1F6F28287193B6C1744F5 /* Pods_SlidableImageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidableImageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		760B9F11A0F10D4B62905645 /* Pods-SlidableImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidableImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlidableImage/Pods-SlidableImage.debug.xcconfig"; sourceTree = "<group>"; };
+		A93EC5AEC1F2699D6E2453CA /* Pods-SlidableImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidableImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlidableImage/Pods-SlidableImage.release.xcconfig"; sourceTree = "<group>"; };
+		B72B190FB92F165700183837 /* Pods-SlidableImageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidableImageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlidableImageTests/Pods-SlidableImageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D55BB1871CB97A10000B2875 /* SlidableImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidableImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55BB18A1CB97A10000B2875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D55BB18C1CB97A10000B2875 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,9 +46,11 @@
 		D55BB1941CB97A10000B2875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D55BB1961CB97A10000B2875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55BB19B1CB97A10000B2875 /* SlidableImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidableImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D55BB19F1CB97A10000B2875 /* SlidableImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidableImageTests.swift; sourceTree = "<group>"; };
+		D55BB19F1CB97A10000B2875 /* SlidableImageSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidableImageSpec.swift; sourceTree = "<group>"; };
 		D55BB1A11CB97A10000B2875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D565D0A41DCD6B2D0028788A /* SlidableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlidableImage.swift; path = Sources/SlidableImage.swift; sourceTree = SOURCE_ROOT; };
+		D5C0D7001E2AA33600E957F8 /* RecordableSnapshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordableSnapshots.swift; sourceTree = "<group>"; };
+		D5C0D7021E2AB93A00E957F8 /* ArrowsViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowsViewSpec.swift; sourceTree = "<group>"; };
 		D5C164D91E07260700606F9F /* ArrowsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrowsView.swift; path = Sources/ArrowsView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -47,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AC3934AD3643246C4430EC /* Pods_SlidableImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +67,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88EB8E5C05A4C79B80B5E119 /* Pods_SlidableImageTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F97D3458E8BB0937FB02669 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				760B9F11A0F10D4B62905645 /* Pods-SlidableImage.debug.xcconfig */,
+				A93EC5AEC1F2699D6E2453CA /* Pods-SlidableImage.release.xcconfig */,
+				B72B190FB92F165700183837 /* Pods-SlidableImageTests.debug.xcconfig */,
+				08042B446B8A4C0C9AF8DE85 /* Pods-SlidableImageTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76B92AD24328E918A81FA6EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F6779F700CD766EAB96C2B7 /* Pods_SlidableImage.framework */,
+				39E1F6F28287193B6C1744F5 /* Pods_SlidableImageTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D55BB17E1CB97A10000B2875 = {
 			isa = PBXGroup;
 			children = (
 				D55BB1891CB97A10000B2875 /* SlidableImage */,
 				D55BB19E1CB97A10000B2875 /* SlidableImageTests */,
 				D55BB1881CB97A10000B2875 /* Products */,
+				1F97D3458E8BB0937FB02669 /* Pods */,
+				76B92AD24328E918A81FA6EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,8 +132,10 @@
 		D55BB19E1CB97A10000B2875 /* SlidableImageTests */ = {
 			isa = PBXGroup;
 			children = (
-				D55BB19F1CB97A10000B2875 /* SlidableImageTests.swift */,
+				D5C0D7021E2AB93A00E957F8 /* ArrowsViewSpec.swift */,
+				D55BB19F1CB97A10000B2875 /* SlidableImageSpec.swift */,
 				D55BB1A11CB97A10000B2875 /* Info.plist */,
+				D5C0D7001E2AA33600E957F8 /* RecordableSnapshots.swift */,
 			);
 			path = SlidableImageTests;
 			sourceTree = "<group>";
@@ -109,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D55BB1A41CB97A10000B2875 /* Build configuration list for PBXNativeTarget "SlidableImage" */;
 			buildPhases = (
+				4ADCF7CAAEE976A13FFD9C0F /* [CP] Check Pods Manifest.lock */,
 				D55BB1831CB97A10000B2875 /* Sources */,
 				D55BB1841CB97A10000B2875 /* Frameworks */,
 				D55BB1851CB97A10000B2875 /* Resources */,
+				A5EA8DCC7BC576A5124240CA /* [CP] Embed Pods Frameworks */,
+				D805CE80A5C4F8BCDD1D11C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D55BB1A71CB97A10000B2875 /* Build configuration list for PBXNativeTarget "SlidableImageTests" */;
 			buildPhases = (
+				821791116B6AA4AB34C5396A /* [CP] Check Pods Manifest.lock */,
 				D55BB1971CB97A10000B2875 /* Sources */,
 				D55BB1981CB97A10000B2875 /* Frameworks */,
 				D55BB1991CB97A10000B2875 /* Resources */,
+				51A16A06772F80A2AAC8E4A8 /* [CP] Embed Pods Frameworks */,
+				35C9E0526B7327EE18F5B9F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,7 +192,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = Quver.xyz;
+				ORGANIZATIONNAME = Quver;
 				TargetAttributes = {
 					D55BB1861CB97A10000B2875 = {
 						CreatedOnToolsVersion = 7.3;
@@ -163,7 +207,7 @@
 				};
 			};
 			buildConfigurationList = D55BB1821CB97A10000B2875 /* Build configuration list for PBXProject "SlidableImage" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -201,6 +245,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35C9E0526B7327EE18F5B9F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlidableImageTests/Pods-SlidableImageTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4ADCF7CAAEE976A13FFD9C0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		51A16A06772F80A2AAC8E4A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlidableImageTests/Pods-SlidableImageTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		821791116B6AA4AB34C5396A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5EA8DCC7BC576A5124240CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlidableImage/Pods-SlidableImage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D805CE80A5C4F8BCDD1D11C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlidableImage/Pods-SlidableImage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D55BB1831CB97A10000B2875 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -217,7 +354,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D55BB1A01CB97A10000B2875 /* SlidableImageTests.swift in Sources */,
+				D5C0D7031E2AB93A00E957F8 /* ArrowsViewSpec.swift in Sources */,
+				D5C0D7011E2AA33600E957F8 /* RecordableSnapshots.swift in Sources */,
+				D55BB1A01CB97A10000B2875 /* SlidableImageSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +479,7 @@
 		};
 		D55BB1A51CB97A10000B2875 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 760B9F11A0F10D4B62905645 /* Pods-SlidableImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -357,6 +497,7 @@
 		};
 		D55BB1A61CB97A10000B2875 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A93EC5AEC1F2699D6E2453CA /* Pods-SlidableImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -375,6 +516,7 @@
 		};
 		D55BB1A81CB97A10000B2875 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B72B190FB92F165700183837 /* Pods-SlidableImageTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SlidableImageTests/Info.plist;
@@ -388,6 +530,7 @@
 		};
 		D55BB1A91CB97A10000B2875 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08042B446B8A4C0C9AF8DE85 /* Pods-SlidableImageTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SlidableImageTests/Info.plist;

@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     super.viewDidLoad()
 
     let rect = CGRect(x: 0, y: 0, width: 300, height: 500)
-    guard let firstImage = UIImage(named: "photo"),
-      let secondImage = UIImage(named: "draw") else { return }
+    let firstImage = UIImage(named: "photo")!
+    let secondImage = UIImage(named: "draw")!
 
     let slider = SlidableImage(frame: rect, images: (firstImage, secondImage))
 
@@ -24,4 +24,3 @@ class ViewController: UIViewController {
   }
 
 }
-
