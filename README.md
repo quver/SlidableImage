@@ -72,23 +72,16 @@ var slideDirection: SlideDirection
 .left, .right, .top, .bottom
 ```
 
-Struct that tells the slider if there should be a border view added
+Add border
 
 ```swift
-var sliderBorder: SlidableImageBorder?
-
-// Structure
-struct SlidableImageBorder {
-  var borderWidth: CGFloat
-  var borderColor: UIColor
-}
+addBorder(width: CGFloat, color: UIColor)
 ```
 
-#### Example
-```swift
-let slider = SlidableImage(frame: rect, firstView: firstSubView, secondView: secondSubView)
-view.addSubview(slider)
+Remove border
 
+```swift
+removeBorder()
 ```
 
 ## TODO
