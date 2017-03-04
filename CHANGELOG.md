@@ -1,15 +1,18 @@
 # Change Log
 
-## [2.0.0](https://github.com/quver/SlidableImage/tree/2.0.0) (2017-01-05)
+## [3.0.0](https://github.com/quver/SlidableImage/tree/3.0.0) (2017-03-04)
+[Full Changelog](https://github.com/quver/SlidableImage/compare/2.0.0...3.0.0)
 
+**Implemented enhancements:**
+
+- QT-11 Refactor [\#8](https://github.com/quver/SlidableImage/pull/8) ([quver](https://github.com/quver))
+
+**Fixed bugs:**
+
+- Improve unit tests + minor bug fixes [\#7](https://github.com/quver/SlidableImage/pull/7) ([quver](https://github.com/quver))
+
+## [2.0.0](https://github.com/quver/SlidableImage/tree/2.0.0) (2017-01-04)
 [Full Changelog](https://github.com/quver/SlidableImage/compare/1.1.0...2.0.0)
-
-**Breaking changes**
-
-_Almost whole API changed_
-
-- initialization
-- access to properties
 
 **Implemented enhancements:**
 
