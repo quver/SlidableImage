@@ -84,31 +84,7 @@ open class SlidableImage: UIView {
   ///
   /// - Parameter maskLocation: Position of slider
   open func updateMask(location maskLocation: CGFloat) {
-    let rect: CGRect = {
-      switch slideDirection {
-      case .left:
-        return CGRect(x: maskLocation,
-                      y: bounds.minY,
-                      width: bounds.width,
-                      height: bounds.height)
-      case .right:
-        return  CGRect(x: bounds.minX,
-                       y: bounds.minY,
-                       width: maskLocation,
-                       height: bounds.height)
-      case .top:
-        return CGRect(x: bounds.minX,
-                      y: maskLocation,
-                      width: bounds.width,
-                      height: bounds.height)
-      case .bottom:
-        return CGRect(x: bounds.minX,
-                      y: bounds.minY,
-                      width: bounds.width,
-                      height: maskLocation)
-      }
-    }()
-    let path = UIBezierPath(rect: rect)
+    let path = UIBezierPath(rect: makeMaskRect(for: maskLocation))
     let layer = CAShapeLayer()
     layer.path = path.cgPath
     views.second.layer.mask = layer
@@ -137,7 +113,6 @@ open class SlidableImage: UIView {
 
     sliderBorderView = borderView
   }
-
 
   /// Remove border from slider
   open func removeBorder() {
@@ -196,16 +171,22 @@ open class SlidableImage: UIView {
   ///   - view: border view
   ///   - width: border color
   private func setupBorderConstraints(of view: UIView, width: CGFloat) {
-    addConstraints([
-      NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: sliderCircle,
-                         attribute: .centerX, multiplier: 1.0, constant: 0.0),
-      NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: sliderCircle,
-                         attribute: .centerY, multiplier: 1.0, constant: 0.0),
-      NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: self,
-                         attribute: .height, multiplier: 1.0, constant: 0.0),
-      NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: nil,
-                         attribute: .notAnAttribute, multiplier: 1.0, constant: width)
-      ])
+    let constraintsDefinitions: [(UIView, NSLayoutAttribute)] = [
+      (sliderCircle, .centerX),
+      (sliderCircle, .centerY),
+      (self, .height)
+    ]
+
+    var constraints = constraintsDefinitions
+      .map {
+        NSLayoutConstraint(item: view, attribute: $1, relatedBy: .equal, toItem: $0, attribute: $1,
+                           multiplier: 1.0, constant: 0.0)
+    }
+    constraints.append(NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal,
+                                          toItem: nil,attribute: .notAnAttribute, multiplier: 1.0,
+                                          constant: width))
+
+    addConstraints(constraints)
   }
 
   /// Private wrapper for setup circle slider view
@@ -243,6 +224,31 @@ open class SlidableImage: UIView {
     imageView.contentMode = .scaleAspectFill
 
     return imageView
+  }
+
+  private func makeMaskRect(for maskLocation: CGFloat) -> CGRect {
+    switch slideDirection {
+    case .left:
+      return CGRect(x: maskLocation,
+                    y: bounds.minY,
+                    width: bounds.width,
+                    height: bounds.height)
+    case .right:
+      return  CGRect(x: bounds.minX,
+                     y: bounds.minY,
+                     width: maskLocation,
+                     height: bounds.height)
+    case .top:
+      return CGRect(x: bounds.minX,
+                    y: maskLocation,
+                    width: bounds.width,
+                    height: bounds.height)
+    case .bottom:
+      return CGRect(x: bounds.minX,
+                    y: bounds.minY,
+                    width: bounds.width,
+                    height: maskLocation)
+    }
   }
 
 }
