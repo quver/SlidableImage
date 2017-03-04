@@ -16,6 +16,7 @@
 		D55BB1951CB97A10000B2875 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55BB1931CB97A10000B2875 /* LaunchScreen.storyboard */; };
 		D55BB1A01CB97A10000B2875 /* SlidableImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB19F1CB97A10000B2875 /* SlidableImageSpec.swift */; };
 		D565D0A51DCD6B2D0028788A /* SlidableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565D0A41DCD6B2D0028788A /* SlidableImage.swift */; };
+		D5865DFA1E6B7D8A006E578E /* SlidableImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865DF91E6B7D8A006E578E /* SlidableImageFactory.swift */; };
 		D5C0D7011E2AA33600E957F8 /* RecordableSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D7001E2AA33600E957F8 /* RecordableSnapshots.swift */; };
 		D5C0D7031E2AB93A00E957F8 /* ArrowsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D7021E2AB93A00E957F8 /* ArrowsViewSpec.swift */; };
 		D5C164DA1E07260700606F9F /* ArrowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C164D91E07260700606F9F /* ArrowsView.swift */; };
@@ -49,6 +50,7 @@
 		D55BB19F1CB97A10000B2875 /* SlidableImageSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidableImageSpec.swift; sourceTree = "<group>"; };
 		D55BB1A11CB97A10000B2875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D565D0A41DCD6B2D0028788A /* SlidableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlidableImage.swift; path = Sources/SlidableImage.swift; sourceTree = SOURCE_ROOT; };
+		D5865DF91E6B7D8A006E578E /* SlidableImageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableImageFactory.swift; sourceTree = "<group>"; };
 		D5C0D7001E2AA33600E957F8 /* RecordableSnapshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordableSnapshots.swift; sourceTree = "<group>"; };
 		D5C0D7021E2AB93A00E957F8 /* ArrowsViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowsViewSpec.swift; sourceTree = "<group>"; };
 		D5C164D91E07260700606F9F /* ArrowsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrowsView.swift; path = Sources/ArrowsView.swift; sourceTree = SOURCE_ROOT; };
@@ -120,6 +122,7 @@
 				D55BB18A1CB97A10000B2875 /* AppDelegate.swift */,
 				D55BB18C1CB97A10000B2875 /* ViewController.swift */,
 				D565D0A41DCD6B2D0028788A /* SlidableImage.swift */,
+				D5865DF91E6B7D8A006E578E /* SlidableImageFactory.swift */,
 				D5C164D91E07260700606F9F /* ArrowsView.swift */,
 				D55BB18E1CB97A10000B2875 /* Main.storyboard */,
 				D55BB1911CB97A10000B2875 /* Assets.xcassets */,
@@ -345,6 +348,7 @@
 			files = (
 				D5C164DA1E07260700606F9F /* ArrowsView.swift in Sources */,
 				D55BB18D1CB97A10000B2875 /* ViewController.swift in Sources */,
+				D5865DFA1E6B7D8A006E578E /* SlidableImageFactory.swift in Sources */,
 				D565D0A51DCD6B2D0028788A /* SlidableImage.swift in Sources */,
 				D55BB18B1CB97A10000B2875 /* AppDelegate.swift in Sources */,
 			);

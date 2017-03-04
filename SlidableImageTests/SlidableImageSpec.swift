@@ -82,23 +82,27 @@ class SlidableImageSpec: QuickSpec {
         }
 
         context("with custom slide direction") {
+          beforeEach {
+            slider = SlidableImage(frame: rect, images: (firstImage, secondImage))
+          }
+
           it("is initialized with right") {
-            slider = SlidableImage(frame: rect, images: (firstImage, secondImage), slideDirection: .right)
+            slider.slideDirection = .right
             expect(slider).to(self.recordValidSnapshot())
           }
 
           it("is initialized with left") {
-            slider = SlidableImage(frame: rect, images: (firstImage, secondImage), slideDirection: .left)
+            slider.slideDirection = .left
             expect(slider).to(self.recordValidSnapshot())
           }
 
           it("is initialized with top") {
-            slider = SlidableImage(frame: rect, images: (firstImage, secondImage), slideDirection: .top)
+            slider.slideDirection = .top
             expect(slider).to(self.recordValidSnapshot())
           }
 
           it("is initialized with bottom") {
-            slider = SlidableImage(frame: rect, images: (firstImage, secondImage), slideDirection: .bottom)
+            slider.slideDirection = .bottom
             expect(slider).to(self.recordValidSnapshot())
           }
         }

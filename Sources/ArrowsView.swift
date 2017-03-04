@@ -11,13 +11,8 @@ import UIKit
 class ArrowsView: UIView {
 
   private typealias FactorTuple = (single: CGFloat, double: CGFloat)
-
-  private enum Side {
-
-    case left
-    case right
-
-  }
+  private typealias Side = SlidableImage.Direction
+  private typealias SidesTuple = (vertical: Side, horizontal: Side)
 
   private let factorValue: CGFloat = 0.05
 
@@ -49,14 +44,14 @@ class ArrowsView: UIView {
     layer.addSublayer(circleLayer)
   }
 
-  private func drawArrow(_ rect: CGRect, side: Side) {
+  private func drawArrow(_ rect: CGRect, side: SlidableImage.Direction) {
     let factor = makeFactor(rect)
     let startPoint = makeStartPoint(rect, side: side, factor: factor)
 
     let arrow = UIBezierPath()
     arrow.move(to: startPoint)
-    arrow.addLine(to: makeBottomPoint(rect, side: side, factor: factor))
-    arrow.addLine(to: makeTopPoint(rect, side: side, factor: factor))
+    arrow.addLine(to: makePoint(rect, side: (.bottom, side), factor: factor))
+    arrow.addLine(to: makePoint(rect, side: (.top, side), factor: factor))
     arrow.addLine(to: startPoint)
 
     let arrowLeftLayer = CAShapeLayer()
@@ -71,35 +66,46 @@ class ArrowsView: UIView {
     return (factor, 2 * factor)
   }
 
-  private func makeStartPoint(_ rect: CGRect, side: Side, factor: FactorTuple) -> CGPoint {
+  private func makeStartPoint(_ rect: CGRect, side: SlidableImage.Direction, factor: FactorTuple) -> CGPoint {
     let startPointX: CGFloat = {
       switch side {
       case .left:
         return rect.minX + factor.double
       case .right:
         return rect.maxX - factor.double
+      default:
+        return 0
       }
     }()
 
     return CGPoint(x: startPointX, y: rect.midY)
   }
 
-  private func makeBottomPoint(_ rect: CGRect, side: Side, factor: FactorTuple) -> CGPoint {
-      switch side {
-      case .left:
-        return CGPoint(x: (rect.midX - factor.single), y: (rect.minY + factor.double))
-      case .right:
-        return CGPoint(x: (rect.midX + factor.single), y: (rect.minY + factor.double))
-      }
+  private func makePoint(_ rect: CGRect, side: SidesTuple, factor: FactorTuple) -> CGPoint {
+    return CGPoint(x: makeX(rect, side: side.horizontal, factor: factor),
+                   y: makeY(rect, side: side.vertical, factor: factor))
   }
 
-  private func makeTopPoint(_ rect: CGRect, side: Side, factor: FactorTuple) -> CGPoint {
-      switch side {
-      case .left:
-        return CGPoint(x: (rect.midX - factor.single), y: (rect.maxY - factor.double))
-      case .right:
-        return CGPoint(x: (rect.midX + factor.single), y: (rect.maxY - factor.double))
-      }
+  private func makeX(_ rect: CGRect, side: SlidableImage.Direction, factor: FactorTuple) -> CGFloat {
+    switch side {
+    case .left:
+      return rect.midX - factor.single
+    case .right:
+      return rect.midX + factor.single
+    default:
+      return 0
+    }
+  }
+
+  private func makeY(_ rect: CGRect, side: SlidableImage.Direction, factor: FactorTuple) -> CGFloat {
+    switch side {
+    case .top:
+      return rect.minY + factor.double
+    case .bottom:
+      return rect.maxY - factor.double
+    default:
+      return 0
+    }
   }
   
 }

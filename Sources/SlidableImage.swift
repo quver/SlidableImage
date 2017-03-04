@@ -15,7 +15,7 @@ open class SlidableImage: UIView {
   public typealias Views = (first: UIView, second: UIView)
 
   /// Direction of sliding
-  public enum SlideDirection {
+  public enum Direction {
 
     case left
     case right
@@ -31,7 +31,12 @@ open class SlidableImage: UIView {
   open var sliderCircle: UIView
 
   /// Direction of sliding
-  open var slideDirection: SlideDirection
+  open var slideDirection: Direction = .right {
+    didSet {
+      prepareForInitialize()
+      initializeViews()
+    }
+  }
 
   /// Describes border with the specfied size and color
   private var sliderBorderView: UIView?
@@ -45,13 +50,10 @@ open class SlidableImage: UIView {
   ///   - sliderBorder: Optional - describes border with the specfied size and color
   public init(frame: CGRect,
               views: Views,
-              sliderImage: UIImage? = nil,
-              slideDirection: SlideDirection = .right) {
+              sliderImage: UIImage? = nil) {
     self.views = views
-    self.sliderCircle = SlidableImage.setupSliderCircle(sliderImage: sliderImage)
-    self.slideDirection = slideDirection
+    self.sliderCircle = SlidableImage.Factory.makeSliderCircle(sliderImage: sliderImage)
     super.init(frame: frame)
-
     initializeViews()
     initializeGestureRecognizer()
   }
@@ -65,15 +67,13 @@ open class SlidableImage: UIView {
   ///   - sliderBorder: Optional - describes border with the specfied size and color
   convenience public init(frame: CGRect,
                           images: Images,
-                          sliderImage: UIImage? = nil,
-                          slideDirection: SlideDirection = .right) {
-    let firstView = SlidableImage.setup(image: images.first, frame: frame)
-    let secondView = SlidableImage.setup(image: images.second, frame: frame)
+                          sliderImage: UIImage? = nil) {
+    let firstView = SlidableImage.Factory.makeContainer(image: images.first, frame: frame)
+    let secondView = SlidableImage.Factory.makeContainer(image: images.second, frame: frame)
 
     self.init(frame: frame,
               views: (firstView, secondView),
-              sliderImage: sliderImage,
-              slideDirection: slideDirection)
+              sliderImage: sliderImage)
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -84,7 +84,10 @@ open class SlidableImage: UIView {
   ///
   /// - Parameter maskLocation: Position of slider
   open func updateMask(location maskLocation: CGFloat) {
-    let path = UIBezierPath(rect: makeMaskRect(for: maskLocation))
+    let mask = Factory.makeMaskRect(for: maskLocation,
+                                    bounds: bounds,
+                                    slideDirection: slideDirection)
+    let path = UIBezierPath(rect: mask)
     let layer = CAShapeLayer()
     layer.path = path.cgPath
     views.second.layer.mask = layer
@@ -119,7 +122,6 @@ open class SlidableImage: UIView {
     sliderBorderView?.removeFromSuperview()
   }
 
-  /// Private wrapper for setup view
   fileprivate func initializeViews() {
     clipsToBounds = true
     sliderCircle.center = center
@@ -135,16 +137,11 @@ open class SlidableImage: UIView {
     addSubview(sliderCircle)
   }
 
-  /// Private wrapper for adding gesture recognizer
   private func initializeGestureRecognizer() {
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(gestureHandler))
     sliderCircle.addGestureRecognizer(panGestureRecognizer)
   }
 
-
-  /// Slide gesture handler
-  ///
-  /// - Parameter panGestureRecognizer: gesture recognizer
   @objc private func gestureHandler(_ panGestureRecognizer: UIPanGestureRecognizer) {
     let location = panGestureRecognizer.location(in: views.first)
 
@@ -164,12 +161,6 @@ open class SlidableImage: UIView {
     }
   }
 
-
-  /// Setup constraints for border
-  ///
-  /// - Parameters:
-  ///   - view: border view
-  ///   - width: border color
   private func setupBorderConstraints(of view: UIView, width: CGFloat) {
     let constraintsDefinitions: [(UIView, NSLayoutAttribute)] = [
       (sliderCircle, .centerX),
@@ -189,65 +180,9 @@ open class SlidableImage: UIView {
     addConstraints(constraints)
   }
 
-  /// Private wrapper for setup circle slider view
-  ///
-  /// - Parameters:
-  ///   - image: Content image for slider circle
-  /// - Returns: Slider circle
-  private class func setupSliderCircle(sliderImage: UIImage? = nil) -> UIView {
-    let frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-    let circle = UIView(frame: frame)
-
-    guard let sliderImage = sliderImage else {
-      return ArrowsView(frame: frame)
-    }
-
-    circle.layer.cornerRadius = circle.bounds.width / 2
-
-    let imageView = UIImageView(image: sliderImage)
-    imageView.contentMode = .scaleAspectFill
-    circle.addSubview(imageView)
-    imageView.center = circle.center
-
-    return circle
-  }
-
-  /// Private wrapper for setup image view
-  ///
-  /// - Parameters:
-  ///   - image: Content image
-  ///   - frame: Target frame
-  /// - Returns: Prepared UIImageView
-  private class func setup(image: UIImage, frame: CGRect) -> UIImageView {
-    let imageView = UIImageView(frame: frame)
-    imageView.image = image
-    imageView.contentMode = .scaleAspectFill
-
-    return imageView
-  }
-
-  private func makeMaskRect(for maskLocation: CGFloat) -> CGRect {
-    switch slideDirection {
-    case .left:
-      return CGRect(x: maskLocation,
-                    y: bounds.minY,
-                    width: bounds.width,
-                    height: bounds.height)
-    case .right:
-      return  CGRect(x: bounds.minX,
-                     y: bounds.minY,
-                     width: maskLocation,
-                     height: bounds.height)
-    case .top:
-      return CGRect(x: bounds.minX,
-                    y: maskLocation,
-                    width: bounds.width,
-                    height: bounds.height)
-    case .bottom:
-      return CGRect(x: bounds.minX,
-                    y: bounds.minY,
-                    width: bounds.width,
-                    height: maskLocation)
+  private func prepareForInitialize() {
+    [views.first, views.second].forEach {
+      $0.removeFromSuperview()
     }
   }
 
