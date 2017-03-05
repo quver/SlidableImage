@@ -45,19 +45,12 @@ class ArrowsView: UIView {
   }
 
   private func drawArrow(_ rect: CGRect, side: SlidableImage.Direction) {
-    let factor = makeFactor(rect)
-    let startPoint = makeStartPoint(rect, side: side, factor: factor)
+    let arrow = makeArrow(rect, side: side)
 
-    let arrow = UIBezierPath()
-    arrow.move(to: startPoint)
-    arrow.addLine(to: makePoint(rect, side: (.bottom, side), factor: factor))
-    arrow.addLine(to: makePoint(rect, side: (.top, side), factor: factor))
-    arrow.addLine(to: startPoint)
-
-    let arrowLeftLayer = CAShapeLayer()
-    arrowLeftLayer.path = arrow.cgPath
-    arrowLeftLayer.fillColor = UIColor.white.cgColor
-    layer.addSublayer(arrowLeftLayer)
+    let arrowLayer = CAShapeLayer()
+    arrowLayer.path = arrow.cgPath
+    arrowLayer.fillColor = UIColor.white.cgColor
+    layer.addSublayer(arrowLayer)
   }
 
   private func makeFactor(_ rect: CGRect) -> FactorTuple {
@@ -106,6 +99,19 @@ class ArrowsView: UIView {
     default:
       return 0
     }
+  }
+
+  private func makeArrow(_ rect: CGRect, side: SlidableImage.Direction) -> UIBezierPath {
+    let factor = makeFactor(rect)
+    let startPoint = makeStartPoint(rect, side: side, factor: factor)
+
+    let arrow = UIBezierPath()
+    arrow.move(to: startPoint)
+    arrow.addLine(to: makePoint(rect, side: (.bottom, side), factor: factor))
+    arrow.addLine(to: makePoint(rect, side: (.top, side), factor: factor))
+    arrow.addLine(to: startPoint)
+
+    return arrow
   }
   
 }
