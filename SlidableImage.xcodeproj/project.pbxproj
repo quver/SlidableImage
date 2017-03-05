@@ -17,6 +17,7 @@
 		D55BB1A01CB97A10000B2875 /* SlidableImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BB19F1CB97A10000B2875 /* SlidableImageSpec.swift */; };
 		D57E7AC31E6C242C00AACB33 /* ArrowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7AC11E6C242C00AACB33 /* ArrowsView.swift */; };
 		D57E7AC41E6C242C00AACB33 /* SlidableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7AC21E6C242C00AACB33 /* SlidableImage.swift */; };
+		D57E7AC61E6C271900AACB33 /* SlidableImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7AC51E6C271900AACB33 /* SlidableImageFactory.swift */; };
 		D5C0D7011E2AA33600E957F8 /* RecordableSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D7001E2AA33600E957F8 /* RecordableSnapshots.swift */; };
 		D5C0D7031E2AB93A00E957F8 /* ArrowsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D7021E2AB93A00E957F8 /* ArrowsViewSpec.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		D55BB1A11CB97A10000B2875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D57E7AC11E6C242C00AACB33 /* ArrowsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowsView.swift; sourceTree = "<group>"; };
 		D57E7AC21E6C242C00AACB33 /* SlidableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableImage.swift; sourceTree = "<group>"; };
+		D57E7AC51E6C271900AACB33 /* SlidableImageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableImageFactory.swift; sourceTree = "<group>"; };
 		D5C0D7001E2AA33600E957F8 /* RecordableSnapshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordableSnapshots.swift; sourceTree = "<group>"; };
 		D5C0D7021E2AB93A00E957F8 /* ArrowsViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowsViewSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 			children = (
 				D57E7AC11E6C242C00AACB33 /* ArrowsView.swift */,
 				D57E7AC21E6C242C00AACB33 /* SlidableImage.swift */,
+				D57E7AC51E6C271900AACB33 /* SlidableImageFactory.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -353,6 +356,7 @@
 			files = (
 				D55BB18D1CB97A10000B2875 /* ViewController.swift in Sources */,
 				D57E7AC41E6C242C00AACB33 /* SlidableImage.swift in Sources */,
+				D57E7AC61E6C271900AACB33 /* SlidableImageFactory.swift in Sources */,
 				D57E7AC31E6C242C00AACB33 /* ArrowsView.swift in Sources */,
 				D55BB18B1CB97A10000B2875 /* AppDelegate.swift in Sources */,
 			);
