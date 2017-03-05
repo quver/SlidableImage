@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/quver/SlidableImage/tree/HEAD)
+
+[Full Changelog](https://github.com/quver/SlidableImage/compare/3.0.0...HEAD)
+
+**Fixed bugs:**
+
+- \[QT-12\] Fix Pod [\#9](https://github.com/quver/SlidableImage/pull/9) ([quver](https://github.com/quver))
+
 ## [3.0.0](https://github.com/quver/SlidableImage/tree/3.0.0) (2017-03-04)
 [Full Changelog](https://github.com/quver/SlidableImage/compare/2.0.0...3.0.0)
 
