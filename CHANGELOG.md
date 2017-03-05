@@ -1,8 +1,8 @@
 # Change Log
 
-## [Unreleased](https://github.com/quver/SlidableImage/tree/HEAD)
+## [3.0.1](https://github.com/quver/SlidableImage/compare/3.0.0...3.0.1) (2017-03-05)
 
-[Full Changelog](https://github.com/quver/SlidableImage/compare/3.0.0...HEAD)
+[Full Changelog](https://github.com/quver/SlidableImage/compare/3.0.0...3.0.1)
 
 **Fixed bugs:**
 
