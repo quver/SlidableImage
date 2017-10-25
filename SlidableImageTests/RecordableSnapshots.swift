@@ -17,9 +17,8 @@ protocol RecordableSnapshots {
 
 extension RecordableSnapshots {
 
-  func recordValidSnapshot(usesDrawRect: Bool = false) -> MatcherFunc<Snapshotable> {
+  func recordValidSnapshot(usesDrawRect: Bool = false) -> Predicate<Snapshotable> {
     return recordMode ? recordSnapshot() : haveValidSnapshot(usesDrawRect: usesDrawRect)
   }
-
 
 }
