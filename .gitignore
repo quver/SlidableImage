@@ -57,3 +57,7 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+
+# Bundler
+/.bundle
+/vendor/bundle
