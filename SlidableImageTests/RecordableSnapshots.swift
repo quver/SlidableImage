@@ -7,7 +7,6 @@
 //
 
 import Nimble
-import Nimble_Snapshots
 
 protocol RecordableSnapshots {
 
@@ -17,8 +16,8 @@ protocol RecordableSnapshots {
 
 extension RecordableSnapshots {
 
-  func recordValidSnapshot(usesDrawRect: Bool = false) -> Predicate<Snapshotable> {
-    return recordMode ? recordSnapshot() : haveValidSnapshot(usesDrawRect: usesDrawRect)
-  }
+//  func recordValidSnapshot(usesDrawRect: Bool = false) -> Predicate<Snapshotable> {
+//    return recordMode ? recordSnapshot() : haveValidSnapshot(usesDrawRect: usesDrawRect)
+//  }
 
 }

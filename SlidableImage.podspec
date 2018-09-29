@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source                = { :git => "https://github.com/quver/SlidableImage.git", :tag => s.version }
   s.source_files          = "Sources/*.swift"
   s.ios.deployment_target = "8.0"
+  s.swift_version         = "4.2"
   s.resources             = "SlidableImage/*.xcassets"
   s.requires_arc          = true
 end
