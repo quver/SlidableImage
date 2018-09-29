@@ -112,7 +112,7 @@ open class SlidableImage: UIView {
     borderView.backgroundColor = color
     addSubview(borderView)
     setupBorderConstraints(of: borderView, width: width)
-    bringSubview(toFront: sliderCircle)
+    bringSubviewToFront(sliderCircle)
 
     sliderBorderView = borderView
   }
@@ -162,7 +162,7 @@ open class SlidableImage: UIView {
   }
 
   private func setupBorderConstraints(of view: UIView, width: CGFloat) {
-    let constraintsDefinitions: [(UIView, NSLayoutAttribute)] = [
+    let constraintsDefinitions: [(UIView, NSLayoutConstraint.Attribute)] = [
       (sliderCircle, .centerX),
       (sliderCircle, .centerY),
       (self, .height)
