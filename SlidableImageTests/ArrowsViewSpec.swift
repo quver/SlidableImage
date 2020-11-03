@@ -12,26 +12,26 @@ import Nimble
 @testable import SlidableImage
 
 final class ArrowsViewSpec: QuickSpec {
-
-  var recordMode = false
-
-  override func spec() {
-    xdescribe("Draw arrows") {
-//      var arrowsView: ArrowsView!
-//
-//      context("frame initialized") {
-//        beforeEach {
-//          let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
-//          arrowsView = ArrowsView(frame: rect)
-//        }
-//
-//        it("is correct draw") {
-//          expect(arrowsView).to(self.recordValidSnapshot(usesDrawRect: false))
-//        }
-//      }
+    
+    var recordMode = false
+    
+    override func spec() {
+        xdescribe("Draw arrows") {
+            //      var arrowsView: ArrowsView!
+            //
+            //      context("frame initialized") {
+            //        beforeEach {
+            //          let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
+            //          arrowsView = ArrowsView(frame: rect)
+            //        }
+            //
+            //        it("is correct draw") {
+            //          expect(arrowsView).to(self.recordValidSnapshot(usesDrawRect: false))
+            //        }
+            //      }
+        }
     }
-  }
-  
+    
 }
 
 extension ArrowsViewSpec: RecordableSnapshots {}
