@@ -9,15 +9,15 @@
 import Nimble
 
 protocol RecordableSnapshots {
-
-  var recordMode: Bool { get }
-
+    
+    var recordMode: Bool { get }
+    
 }
 
 extension RecordableSnapshots {
-
-//  func recordValidSnapshot(usesDrawRect: Bool = false) -> Predicate<Snapshotable> {
-//    return recordMode ? recordSnapshot() : haveValidSnapshot(usesDrawRect: usesDrawRect)
-//  }
-
+    
+    //  func recordValidSnapshot(usesDrawRect: Bool = false) -> Predicate<Snapshotable> {
+    //    return recordMode ? recordSnapshot() : haveValidSnapshot(usesDrawRect: usesDrawRect)
+    //  }
+    
 }
