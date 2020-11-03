@@ -1,9 +1,12 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 
 import PackageDescription
 
 let package = Package(
     name: "SlidableImage",
+    platforms: [
+        .iOS(.v9)
+    ],
     products: [
         .library(
             name: "SlidableImage",
@@ -14,6 +17,6 @@ let package = Package(
     targets: [
         .target(
             name: "SlidableImage",
-            dependencies: []),
+            dependencies: [])
     ]
 )

@@ -7,7 +7,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SlidableImage.svg?style=flat)](http://cocoapods.org/pods/SlidableImage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager)
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/quver/slidableimage)](http://clayallsopp.github.io/readme-score?url=https://github.com/quver/slidableimage)
-[![Documentation](https://quver.github.io/SlidableImage/badge.svg)](https://quver.github.io/VATIdValidator/index.html)
+[![Documentation](https://quver.github.io/SlidableImage/badge.svg)](https://quver.github.io/SlidableImage/index.html)
 
 ![](https://raw.githubusercontent.com/quver/SlidableImage/master/Assets/demo.gif)
 
@@ -15,8 +15,8 @@ Easy to use library for before & after images. One-line initialization and very 
 
 ## Requirements
 
-- iOS 8
-- Swift 3.0
+- iOS 9
+- Swift 5
 
 ## Instalation
 
@@ -26,7 +26,7 @@ This library support
 - Swift Package Manager
 
 ```ruby
-pod 'SlidableImage', '~>2.0'
+pod 'SlidableImage', '~>3.0'
 ```
 
 ## Using
