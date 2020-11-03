@@ -1,5 +1,5 @@
 # SlidableImage
-[![Build Status](https://travis-ci.org/quver/SlidableImage.svg)](https://travis-ci.org/quver/SlidableImage)
+![CI](https://github.com/quver/SlidableImage/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/quver/SlidableImage/branch/master/graph/badge.svg)](https://codecov.io/gh/quver/SlidableImage)
 [![codebeat badge](https://codebeat.co/badges/53a20383-39e8-42ee-9df3-56b3bb55cb1d)](https://codebeat.co/projects/github-com-quver-slidableimage)
 [![GitHub license](https://img.shields.io/github/license/quver/SlidableImage.svg)]()
@@ -7,6 +7,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SlidableImage.svg?style=flat)](http://cocoapods.org/pods/SlidableImage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager)
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/quver/slidableimage)](http://clayallsopp.github.io/readme-score?url=https://github.com/quver/slidableimage)
+[![Documentation](https://quver.github.io/SlidableImage/badge.svg)](https://quver.github.io/VATIdValidator/index.html)
 
 ![](https://raw.githubusercontent.com/quver/SlidableImage/master/Assets/demo.gif)
 
