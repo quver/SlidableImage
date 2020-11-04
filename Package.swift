@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "SlidableImage",
-            targets: ["SlidableImage"]),
+            targets: ["SlidableImage"])
     ],
     dependencies: [
     ],

@@ -1,5 +1,5 @@
 # SlidableImage
-![CI](https://github.com/quver/SlidableImage/workflows/CI/badge.svg)
+![iOS CI](https://github.com/quver/SlidableImage/workflows/iOS%20CI/badge.svg)
 [![codecov](https://codecov.io/gh/quver/SlidableImage/branch/master/graph/badge.svg)](https://codecov.io/gh/quver/SlidableImage)
 [![codebeat badge](https://codebeat.co/badges/53a20383-39e8-42ee-9df3-56b3bb55cb1d)](https://codebeat.co/projects/github-com-quver-slidableimage)
 [![GitHub license](https://img.shields.io/github/license/quver/SlidableImage.svg)]()

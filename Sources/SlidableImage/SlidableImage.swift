@@ -100,7 +100,6 @@ open class SlidableImage: UIView {
         }
     }
     
-    
     /// Add border for slider
     ///
     /// - Parameters:
@@ -173,8 +172,12 @@ open class SlidableImage: UIView {
                 NSLayoutConstraint(item: view, attribute: $1, relatedBy: .equal, toItem: $0, attribute: $1,
                                    multiplier: 1.0, constant: 0.0)
             }
-        constraints.append(NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal,
-                                              toItem: nil,attribute: .notAnAttribute, multiplier: 1.0,
+        constraints.append(NSLayoutConstraint(item: view,
+                                              attribute: .width,
+                                              relatedBy: .equal,
+                                              toItem: nil,
+                                              attribute: .notAnAttribute,
+                                              multiplier: 1.0,
                                               constant: width))
         
         addConstraints(constraints)

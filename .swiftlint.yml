@@ -1,0 +1,9 @@
+disabled_rules:
+  - trailing_whitespace
+line_length: 140
+excluded:
+  - Sources
+  - SlidableImage
+  - SlidableImageTests
+excluded:
+  - Pods
