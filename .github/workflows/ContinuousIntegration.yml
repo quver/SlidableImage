@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches: [ '*' ]
 
 jobs:
   build:
@@ -20,4 +20,10 @@ jobs:
         shell: bash
       - name: Test
         run: |
-          xcodebuild test -workspace SlidableImage.xcworkspace -scheme SlidableImage -destination "platform=iOS Simulator,name=iPhone 11 Pro"
+          xcodebuild test -workspace SlidableImage.xcworkspace -scheme SlidableImage -destination "platform=iOS Simulator,name=iPhone 11 Pro" -enableCodeCoverage YES
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@v1.0.3
+        with:
+          flags: base64,unittests
+          file: info.lcov
+          fail_ci_if_error: true 

@@ -1,7 +1,9 @@
+name: SwiftLint
+
 on:
   pull_request:
     paths:
-      - '.github/workflows/swiftlint.yml'
+      - '.github/workflows/SwiftLint.yml'
       - '.swiftlint.yml'
       - '**/*.swift'
 

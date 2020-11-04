@@ -6,8 +6,6 @@ target 'SlidableImage' do
   target 'SlidableImageTests' do
     inherit! :search_paths
     pod 'iOSSnapshotTestCase'
-    pod 'Nimble'
-    pod 'Quick'
   end
 
 end
