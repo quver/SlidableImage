@@ -22,8 +22,5 @@ jobs:
         run: |
           xcodebuild test -workspace SlidableImage.xcworkspace -scheme SlidableImage -destination "platform=iOS Simulator,name=iPhone 11 Pro" -enableCodeCoverage YES
       - name: Upload to codecov.io
-        uses: codecov/codecov-action@v1.0.3
-        with:
-          flags: base64,unittests
-          file: info.lcov
-          fail_ci_if_error: true 
+        run: |
+          bash <(curl -s https://codecov.io/bash)
