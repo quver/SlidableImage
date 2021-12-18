@@ -65,7 +65,7 @@ var sliderCircle: UIView
 
 Enum that describes which direction the slider will slide from.
 
-```
+```swift
 var slideDirection: SlideDirection
 
 // Possible values
