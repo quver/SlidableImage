@@ -7,7 +7,6 @@
 [![Version](https://img.shields.io/cocoapods/v/SlidableImage.svg?style=flat)](http://cocoapods.org/pods/SlidableImage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager)
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/quver/slidableimage)](http://clayallsopp.github.io/readme-score?url=https://github.com/quver/slidableimage)
-[![Documentation](https://quver.github.io/SlidableImage/badge.svg)](https://quver.github.io/SlidableImage/index.html)
 
 ![](https://raw.githubusercontent.com/quver/SlidableImage/master/Assets/demo.gif)
 
