@@ -14,7 +14,7 @@ Easy to use library for before & after images. One-line initialization and very 
 
 ## Requirements
 
-- iOS 9
+- iOS 12
 - Swift 5
 
 ## Instalation
