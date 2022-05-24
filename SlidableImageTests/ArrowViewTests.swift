@@ -7,11 +7,9 @@
 //
 
 import FBSnapshotTestCase
-
 @testable import SlidableImage
 
 final class ArrowViewTests: FBSnapshotTestCase {
-    
     private var arrowsView: ArrowsView!
     
     override func setUp() {

@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ArrowsView: UIView {
-    
+final class ArrowsView: UIView {
     private typealias FactorTuple = (single: CGFloat, double: CGFloat)
     private typealias Side = SlidableImage.Direction
     private typealias SidesTuple = (vertical: Side, horizontal: Side)

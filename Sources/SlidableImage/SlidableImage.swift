@@ -10,18 +10,15 @@ import UIKit
 
 /// Super easy Slider for before&after images
 open class SlidableImage: UIView {
-    
     public typealias Images = (first: UIImage, second: UIImage)
     public typealias Views = (first: UIView, second: UIView)
     
     /// Direction of sliding
     public enum Direction {
-        
         case left
         case right
         case top
         case bottom
-        
     }
     
     /// Views tuple
@@ -76,6 +73,7 @@ open class SlidableImage: UIView {
                   sliderImage: sliderImage)
     }
     
+    @available(*, unavailable)
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -121,7 +119,7 @@ open class SlidableImage: UIView {
         sliderBorderView?.removeFromSuperview()
     }
     
-    fileprivate func initializeViews() {
+    private func initializeViews() {
         clipsToBounds = true
         sliderCircle.center = center
         switch slideDirection {
@@ -146,15 +144,11 @@ open class SlidableImage: UIView {
         
         switch slideDirection {
         case .left, .right:
-            guard bounds.minX...bounds.maxX ~= location.x else {
-                return
-            }
+            guard bounds.minX...bounds.maxX ~= location.x else { return }
             
             updateMask(location: location.x)
         case .top, .bottom:
-            guard bounds.minY...bounds.maxY ~= location.y else {
-                return
-            }
+            guard bounds.minY...bounds.maxY ~= location.y else { return }
             
             updateMask(location: location.y)
         }
