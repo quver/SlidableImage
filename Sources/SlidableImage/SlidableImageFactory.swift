@@ -9,9 +9,7 @@
 import UIKit
 
 extension SlidableImage {
-    
     struct Factory {
-        
         static func makeSliderCircle(sliderImage: UIImage? = nil) -> UIView {
             let frame = CGRect(x: 0, y: 0, width: 50, height: 50)
             let circle = UIView(frame: frame)
@@ -63,5 +61,4 @@ extension SlidableImage {
             }
         }
     }
-    
 }

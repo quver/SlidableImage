@@ -7,11 +7,9 @@
 //
 
 import FBSnapshotTestCase
-
 @testable import SlidableImage
 
 final class SlidableImageTests: FBSnapshotTestCase {
-    
     let rect = CGRect(x: 0, y: 0, width: 300, height: 667)
     let firstImage = UIImage(named: "photo")!
     let secondImage = UIImage(named: "draw")!
