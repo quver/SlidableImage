@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Publish Jazzy Docs
-      uses: steven0351/publish-jazzy-docs@v1
+      uses: steven0351/publish-jazzy-docs@v1.1.2
       with:
         personal_access_token: ${{ secrets.ACCESS_TOKEN }}

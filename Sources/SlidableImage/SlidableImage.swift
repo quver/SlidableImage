@@ -12,8 +12,8 @@ public struct SlidableImage<ArrowsIcon: View, LeftView: View, RightView: View>: 
     private let rightView: () -> RightView
     
     public init(@ViewBuilder arrows: @escaping () -> ArrowsIcon,
-         @ViewBuilder leftView: @escaping () -> LeftView,
-         @ViewBuilder rightView: @escaping () -> RightView) {
+                @ViewBuilder leftView: @escaping () -> LeftView,
+                @ViewBuilder rightView: @escaping () -> RightView) {
         self.arrows = arrows
         self.leftView = leftView
         self.rightView = rightView
@@ -55,8 +55,10 @@ public struct SlidableImage<ArrowsIcon: View, LeftView: View, RightView: View>: 
     }
 }
 
-#Preview {
-    SlidableImage(arrows: { Arrows() },
-                  leftView: { Color.red },
-                  rightView: { Color.green })
+struct SlidableImage_Preview: PreviewProvider {
+    static var previews: some View {
+        SlidableImage(arrows: { Arrows() },
+                      leftView: { Color.red },
+                      rightView: { Color.green })
+    }
 }

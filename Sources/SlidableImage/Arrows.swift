@@ -18,21 +18,23 @@ public struct Arrows: View {
         HStack(spacing: 5) {
             Triangle()
                 .fill(arrowColor)
-                .frame(width: 20, height: 32)
+                .frame(width: 20, height: Constants.arrowSize / 2)
                 .rotationEffect(.degrees(180))
             Triangle()
                 .fill(arrowColor)
-                .frame(width: 20, height: 32)
+                .frame(width: 20, height: Constants.arrowSize / 2)
         }
         .frame(width: Constants.arrowSize, height: Constants.arrowSize)
         .background(backgroundColor)
-        .cornerRadius(32)
+        .cornerRadius(Constants.arrowSize / 2)
     }
 }
 
-#Preview {
-    VStack {
-        Arrows()
-        Arrows(arrowColor: .green, backgroundColor: .orange)
+struct Arrows_Preview: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            Arrows()
+            Arrows(arrowColor: .green, backgroundColor: .orange)
+        }
     }
 }
