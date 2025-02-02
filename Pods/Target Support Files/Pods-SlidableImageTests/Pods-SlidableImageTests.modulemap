@@ -1,6 +1,0 @@
-framework module Pods_SlidableImageTests {
-  umbrella header "Pods-SlidableImageTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

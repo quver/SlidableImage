@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.social_media_url      = "https://twitter.com/plquver"
   s.source                = { :git => "https://github.com/quver/SlidableImage.git", :tag => s.version }
   s.source_files          = "Sources/*.swift"
-  s.ios.deployment_target = "12.0"
+  s.ios.deployment_target = "13.0"
   s.swift_version         = "5.5"
   s.resources             = "SlidableImage/*.xcassets"
   s.requires_arc          = true

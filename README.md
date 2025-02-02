@@ -1,91 +1,38 @@
 # SlidableImage
 ![iOS CI](https://github.com/quver/SlidableImage/workflows/iOS%20CI/badge.svg)
-[![codecov](https://codecov.io/gh/quver/SlidableImage/branch/master/graph/badge.svg)](https://codecov.io/gh/quver/SlidableImage)
-[![codebeat badge](https://codebeat.co/badges/53a20383-39e8-42ee-9df3-56b3bb55cb1d)](https://codebeat.co/projects/github-com-quver-slidableimage)
 [![GitHub license](https://img.shields.io/github/license/quver/SlidableImage.svg)]()
-[![Platform](https://img.shields.io/cocoapods/p/SlidableImage.svg?style=flat)](http://cocoapods.org/pods/SlidableImage)
-[![Version](https://img.shields.io/cocoapods/v/SlidableImage.svg?style=flat)](http://cocoapods.org/pods/SlidableImage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager)
-[![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/quver/slidableimage)](http://clayallsopp.github.io/readme-score?url=https://github.com/quver/slidableimage)
 
-![](https://raw.githubusercontent.com/quver/SlidableImage/master/Assets/demo.gif)
-
-Easy to use library for before & after images. One-line initialization and very customizable API.
+Easy to use library for before & after images. One-line initialization and SwiftUI.
 
 ## Requirements
 
-- iOS 12
+- iOS 15
 - Swift 5
 
 ## Instalation
 
 This library support
 
-- Cocoapods
 - Swift Package Manager
-
-```ruby
-pod 'SlidableImage', '~>3.0'
-```
 
 ## Using
 
-### Constructor
+![Code example](Assets/code.png)
 
-Common init with image
+### Constructor 
 
-```swift
-init(frame: CGRect, views: Views)
-```
-Gemeric init with views
-
-```swift
-init(frame: CGRect, images Images)
+```swfit 
+init(@ViewBuilder arrows: @escaping () -> ArrowsIcon,
+     @ViewBuilder leftView: @escaping () -> LeftView,
+     @ViewBuilder rightView: @escaping () -> RightView)
 ```
 
-### Move slider
-```swift
-updateMask(location maskLocation: CGFloat)
-```
-
-### Variables
-
-Views tuple
+### Arrows
 
 ```swift
-var views: Views
+init(arrowColor: Color = .white, backgroundColor: Color = .gray)
 ```
-
-Circle view with icon for sliding images. You can override it with your custom view.
-
-
-```swift
-var sliderCircle: UIView
-```
-
-Enum that describes which direction the slider will slide from.
-
-```swift
-var slideDirection: SlideDirection
-
-// Possible values
-.left, .right, .top, .bottom
-```
-
-Add border
-
-```swift
-addBorder(width: CGFloat, color: UIColor)
-```
-
-Remove border
-
-```swift
-removeBorder()
-```
-
-## TODO
-- Test with storyboards
 
 ## Author
 
@@ -95,5 +42,3 @@ Paweł Bednorz, Quver
 
 SlidableImage Lib and Slider graphic are available under the MIT license. 
 Check the LICENSE file for more information.
-
-Images from [http://www.comicsbeat.com/awesome-infographic-on-the-avengers-then-and-now/](http://www.comicsbeat.com/awesome-infographic-on-the-avengers-then-and-now/)
