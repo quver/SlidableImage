@@ -30,7 +30,7 @@ public struct Arrows: View {
     }
 }
 
-struct Arrows_Preview: PreviewProvider {
+struct ArrowsPreview: PreviewProvider {
     static var previews: some View {
         VStack {
             Arrows()
