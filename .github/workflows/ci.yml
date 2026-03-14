@@ -20,16 +20,16 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: norio-nomura/action-swiftlint@9f4dcd7fd46b4e75d7935cf2f4df406d5cae3684 # 3.2.1
 
-  build-macos:
-    name: Build · macOS
+  test-macos:
+    name: Test · macOS
     runs-on: macos-15
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Build
-        run: swift build -v
+      - name: Test
+        run: swift test -v
 
-  build-ios:
-    name: Build · iOS ${{ matrix.os }}
+  test-ios:
+    name: Test · iOS ${{ matrix.os }}
     runs-on: macos-15
     strategy:
       fail-fast: false
@@ -43,9 +43,9 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Build
+      - name: Test
         run: |
-          xcodebuild build \
+          xcodebuild test \
             -scheme SlidableImage \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=${{ matrix.os }}' \
             CODE_SIGNING_REQUIRED=NO \

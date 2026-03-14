@@ -46,12 +46,12 @@ public struct SlidableImage<ArrowsIcon: View, LeftView: View, RightView: View>: 
         }
     }
 
-    private func maskSize(width: CGFloat) -> CGFloat {
-        guard let location = location?.x else {
+    package func maskSize(width: CGFloat, locationX: CGFloat? = nil) -> CGFloat {
+        guard let locationX = locationX ?? location?.x else {
             return width / 2
         }
 
-        return width - location - Constants.arrowSize / 2
+        return width - locationX - Constants.arrowSize / 2
     }
 }
 
