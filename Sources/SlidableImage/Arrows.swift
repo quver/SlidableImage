@@ -8,12 +8,12 @@ import SwiftUI
 public struct Arrows: View {
     private let arrowColor: Color
     private let backgroundColor: Color
-    
+
     public init(arrowColor: Color = .white, backgroundColor: Color = .gray) {
         self.arrowColor = arrowColor
         self.backgroundColor = backgroundColor
     }
-    
+
     public var body: some View {
         HStack(spacing: 5) {
             Triangle()
