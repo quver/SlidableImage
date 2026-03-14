@@ -16,9 +16,7 @@ struct Triangle: Shape {
     }
 }
 
-struct Triangle_Previews: PreviewProvider {
-    static var previews: some View {
-        Triangle()
-            .frame(width: 100, height: 100)
-    }
+#Preview {
+    Triangle()
+        .frame(width: 100, height: 100)
 }

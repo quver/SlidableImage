@@ -30,11 +30,9 @@ public struct Arrows: View {
     }
 }
 
-struct ArrowsPreview: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            Arrows()
-            Arrows(arrowColor: .green, backgroundColor: .orange)
-        }
+#Preview {
+    VStack {
+        Arrows()
+        Arrows(arrowColor: .green, backgroundColor: .orange)
     }
 }

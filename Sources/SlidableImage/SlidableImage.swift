@@ -55,10 +55,8 @@ public struct SlidableImage<ArrowsIcon: View, LeftView: View, RightView: View>: 
     }
 }
 
-struct SlidableImagePreview: PreviewProvider {
-    static var previews: some View {
-        SlidableImage(arrows: { Arrows() },
-                      leftView: { Color.red },
-                      rightView: { Color.green })
-    }
+#Preview {
+    SlidableImage(arrows: { Arrows() },
+                  leftView: { Color.red },
+                  rightView: { Color.green })
 }
