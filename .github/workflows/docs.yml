@@ -22,7 +22,7 @@ jobs:
     name: Build Documentation
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - name: Build DocC documentation
         run: |
@@ -36,7 +36,7 @@ jobs:
       - name: Add root redirect
         run: |
           echo '<html><head><meta http-equiv="refresh" content="0; url=/SlidableImage/documentation/slidableimage/"></head></html>' > ./docs/index.html
-      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: ./docs
 
